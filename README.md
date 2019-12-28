@@ -22,7 +22,11 @@ The trivia will be pulled from (insert name of site here) api pulled through and
 ---
 
 ## Client stories
-
+As a user i want the site to be easy to use with a colourful and welcoming inferface.
+As a user i want to be able to choose what questions i'm given
+As a user i want to be able to select how hard the questions are so my kids could play it
+As a user i want to be challenged!
+As a user i want to be able to be questioned on all subjects at once.
 
 
 ---
