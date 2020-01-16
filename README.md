@@ -36,7 +36,11 @@ As the user is answering the presented questions, the current score against the 
 
 ## Wireframe Mockups:
 
+Desktop here 
 
+Tablet Here
+
+Mobile Here
 
 ---
 
