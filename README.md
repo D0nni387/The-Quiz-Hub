@@ -13,6 +13,8 @@ Each question will be presented individually to the user with 4 potential option
 
 The trivia will be pulled from (insert name of site here) api pulled through and upon selection presented to the user.
 
+As the user is answering the presented questions, the current score against the total amount of selected questions will be given to the user and at the conclusion a total provided of correct answers.
+
 ---
 
 ## UX
