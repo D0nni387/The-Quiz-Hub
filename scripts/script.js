@@ -1,5 +1,4 @@
-
-
+const length = 10
 
 fetch("https://opentdb.com/api_category.php")
     .then(function (response) {
@@ -26,4 +25,12 @@ fetch("https://opentdb.com/api_category.php")
 function getSelection(id, length) {
     let baseURL = "https://opentdb.com/api.php?amount=";
     let fetchQuiz = baseURL + length + "&category=" + id + "&type=multiple";
+
+    fetch(fetchQuiz)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            newQuiz(data.results);
+        });
 }
