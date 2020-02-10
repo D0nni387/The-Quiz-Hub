@@ -31,7 +31,6 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
         questions = loadedQuestions.results.map(loadedQuestion => {
             let formatQuestion = {
                 question: loadedQuestion.question
-                
             };
 
             formatQuestion.answer = Math.floor(Math.random() * 3) + 1
@@ -40,7 +39,7 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
             answerChoices.splice(
                 formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
             )
-            console.log(answerChoices)
+            
         })
     })
 
