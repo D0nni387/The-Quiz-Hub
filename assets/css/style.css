@@ -3,3 +3,8 @@
 .hide {
     display: none;
 }
+
+.answerarea {
+    display: flex;
+    justify-content: center;
+}
