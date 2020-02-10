@@ -87,7 +87,7 @@ answers.forEach(answer => {
             outcome = 'correct'
         }
         selection.parentElement.classList.add(outcome)
-        let outcomeText = document.getElementsById("outcome")
+        let outcomeText = document.getElementById("outcome")
         outcomeText.innerText = outcome
 
         setTimeout(() => {
