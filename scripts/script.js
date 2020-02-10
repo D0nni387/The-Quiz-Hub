@@ -46,4 +46,11 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
     })
 
 
+    //Not sure on this yet!
+newQuestion = () => {
+    if (totalQuestions.length == 0) {
+        let finished = document.getElementById("questionsArea")
+        finished.classList.add("hide")
+        }
+}
 
