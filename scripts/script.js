@@ -31,8 +31,16 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
         questions = loadedQuestions.results.map(loadedQuestion => {
             let formatQuestion = {
                 question: loadedQuestion.question
+                
             };
-            console.log(formatQuestion);
+
+            formatQuestion.answer = Math.floor(Math.random() * 3) + 1
+
+            let answerChoices = [...loadedQuestion.incorrect_answers]
+            answerChoices.splice(
+                formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
+            )
+            console.log(answerChoices)
         })
     })
 
