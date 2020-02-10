@@ -56,5 +56,8 @@ newQuestion = () => {
         let finished = document.getElementById("questionsArea")
         finished.classList.add("hide")
         }
-}
+        let questionIndex = Math.floor(Math.random() * totalQuestions.length)
+        currentQuestion = questions[questionIndex]
+        question.innerText = currentQuestion.question
+        }
 
