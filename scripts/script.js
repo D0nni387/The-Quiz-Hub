@@ -93,6 +93,6 @@ answers.forEach(answer => {
         setTimeout(() => {
             selection.parentElement.classList.remove(outcome)
             newQuestion()
-        }, 1000)
+        }, 2000)
     })
 })
