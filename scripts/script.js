@@ -21,26 +21,28 @@
 
 let question = document.getElementById("question"); 
 
-let questions = [];
+let questions = []; //sets blank array for API to populate
 
 fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
     .then(data => {
-        return data.json()
+        return data.json() //converts received data to JSON
     })
-    .then(loadedQuestions => {
+    .then(loadedQuestions => { 
         questions = loadedQuestions.results.map(loadedQuestion => {
             let formatQuestion = {
                 question: loadedQuestion.question
             };
 
-            formatQuestion.answer = Math.floor(Math.random() * 3) + 1
+            formatQuestion.answer = Math.floor(Math.random() * 3) + 1 
+
 
             let answerChoices = [...loadedQuestion.incorrect_answers]
             answerChoices.splice(
                 formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
-            )
-            
+            ) //adds correct answer into the array
+            return formatQuestion
         })
+
     })
 
 
