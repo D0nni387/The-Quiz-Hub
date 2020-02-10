@@ -68,12 +68,15 @@ newQuestion = () => {
         let questionIndex = Math.floor(Math.random() * totalQuestions.length)
         currentQuestion = questions[questionIndex]
         question.innerText = currentQuestion.question
-        }
+        
 
         answers.forEach(answer => {
             let number = answer.dataset["answer"]
             answer.innerText = currentQuestion["choice" + number]
         })
 
-        
+        totalQuestions.splice(questionIndex, 1)
+
+    }
+
 
