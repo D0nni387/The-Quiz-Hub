@@ -13,3 +13,8 @@
     background-color: aqua;
     margin: 10px;
 }
+
+.outcome {
+    display: flex;
+    justify-content: center;
+}
