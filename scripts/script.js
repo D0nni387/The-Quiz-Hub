@@ -27,6 +27,9 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
     .then(data => {
         return data.json()
     })
+    .then(loadedQuestions => {
+        console.log(loadedQuestions)
+    })
 
 
 
