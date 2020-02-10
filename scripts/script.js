@@ -23,4 +23,7 @@ let question = document.getElementById("question");
 
 let questions = [];
 
+fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple");
+
+
 
