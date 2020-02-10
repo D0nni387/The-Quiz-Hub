@@ -19,7 +19,8 @@
        // });
     //});
 
-let question = document.getElementById("question"); 
+
+
 
 let questions = []; //sets blank array for API to populate
 
@@ -40,6 +41,10 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
             answerChoices.splice(
                 formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
             ) //adds correct answer into the array
+                answerChoices.forEach((answer, index) => {
+                    formatQuestion["choice" + (index + 1)] = answer
+                })
+
             return formatQuestion
         })
         startGame()
@@ -49,6 +54,10 @@ startGame = () => {
     totalQuestions = [...questions]
     newQuestion()
 }
+
+let currentQuestion = {}
+let answers = Array.from(document.getElementsByClassName("answer-format"))
+let question = document.getElementById("question"); 
 
     //Not sure on this yet!
 newQuestion = () => {
@@ -65,4 +74,6 @@ newQuestion = () => {
             let number = answer.dataset["answer"]
             answer.innerText = currentQuestion["choice" + number]
         })
+
+        
 
