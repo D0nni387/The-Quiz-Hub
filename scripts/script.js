@@ -21,4 +21,6 @@
 
 let question = document.getElementById("question"); 
 
+let questions = [];
+
 
