@@ -19,5 +19,6 @@
        // });
     //});
 
+let question = document.getElementById("question"); 
 
 
