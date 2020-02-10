@@ -42,7 +42,7 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
             ) //adds correct answer into the array
             return formatQuestion
         })
-
+        startGame()
     })
 
 startGame = () => {
@@ -60,4 +60,9 @@ newQuestion = () => {
         currentQuestion = questions[questionIndex]
         question.innerText = currentQuestion.question
         }
+
+        answers.forEach(answer => {
+            let number = answer.dataset["answer"]
+            answer.innerText = currentQuestion["choice" + number]
+        })
 
