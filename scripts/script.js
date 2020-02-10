@@ -33,7 +33,7 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
                 question: loadedQuestion.question
             };
 
-            formatQuestion.answer = Math.floor(Math.random() * 3) + 1
+            formatQuestion.answer = Math.floor(Math.random() * 10) + 1
 
 
             let answerChoices = [...loadedQuestion.incorrect_answers]
@@ -43,7 +43,7 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
             answerChoices.forEach((answer, index) => {
                 formatQuestion["choice" + (index + 1)] = answer
             })
-
+           
             return formatQuestion
         })
         startGame()
@@ -60,6 +60,9 @@ let question = document.getElementById("question");
 
 //Not sure on this yet!
 newQuestion = () => {
+
+    console.log(questions)
+
     if (totalQuestions.length == 0) {
         let finished = document.getElementById("questionsArea")
         finished.classList.add("hide")
@@ -73,8 +76,9 @@ newQuestion = () => {
         let number = answer.dataset["answer"]
         answer.innerText = currentQuestion["choice" + number]
     })
-
-    totalQuestions.splice(questionIndex, 1)
+    
+    questions.splice(questionIndex, 1)
+    
 }
 
 answers.forEach(answer => {
@@ -92,6 +96,8 @@ answers.forEach(answer => {
 
         setTimeout(() => {
             selection.parentElement.classList.remove(outcome)
+            
+            
             newQuestion()
         }, 2000)
     })
