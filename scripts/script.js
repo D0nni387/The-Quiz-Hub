@@ -45,6 +45,10 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
 
     })
 
+startGame = () => {
+    totalQuestions = [...questions]
+    newQuestion()
+}
 
     //Not sure on this yet!
 newQuestion = () => {
