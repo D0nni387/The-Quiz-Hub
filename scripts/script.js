@@ -86,12 +86,12 @@ answers.forEach(answer => {
         if (selectedAnswer == currentQuestion.answer) {
             outcome = 'correct'
         }
-        selectedChoice.parentElement.classList.add(outcome)
+        selection.parentElement.classList.add(outcome)
         let outcomeText = document.getElementsById("outcome")
         outcomeText.innerText = outcome
 
         setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(outcome)
+            selection.parentElement.classList.remove(outcome)
             newQuestion()
         }, 1000)
     })
