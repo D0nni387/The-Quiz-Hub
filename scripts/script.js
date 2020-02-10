@@ -76,7 +76,6 @@ newQuestion = () => {
         })
 
         totalQuestions.splice(questionIndex, 1)
-
     }
 
 
