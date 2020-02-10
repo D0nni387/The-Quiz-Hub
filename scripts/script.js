@@ -28,7 +28,12 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
         return data.json()
     })
     .then(loadedQuestions => {
-        console.log(loadedQuestions)
+        questions = loadedQuestions.results.map(loadedQuestion => {
+            let formatQuestion = {
+                question: loadedQuestion.question
+            };
+            console.log(formatQuestion);
+        })
     })
 
 
