@@ -20,7 +20,9 @@
 
 
 
-
+let currentQuestion = {}
+let answers = Array.from(document.getElementsByClassName("answer-format"))
+let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 
 fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
@@ -29,21 +31,21 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
     })
     .then(loadedQuestions => {
         questions = loadedQuestions.results.map(loadedQuestion => {
-            let formatQuestion = {
+            const formatQuestion = {
                 question: loadedQuestion.question
             };
 
-            formatQuestion.answer = Math.floor(Math.random() * 10) + 1
+            formatQuestion.answer = Math.floor(Math.random() * 3) + 1
 
 
-            let answerChoices = [...loadedQuestion.incorrect_answers]
+            const answerChoices = [...loadedQuestion.incorrect_answers]
             answerChoices.splice(
                 formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
             ) //adds correct answer into the array
             answerChoices.forEach((answer, index) => {
                 formatQuestion["choice" + (index + 1)] = answer
             })
-           
+
             return formatQuestion
         })
         startGame()
@@ -54,31 +56,31 @@ startGame = () => {
     newQuestion()
 }
 
-let currentQuestion = {}
-let answers = Array.from(document.getElementsByClassName("answer-format"))
-let question = document.getElementById("question");
+
 
 //Not sure on this yet!
 newQuestion = () => {
 
-    console.log(questions)
 
     if (totalQuestions.length == 0) {
-        let finished = document.getElementById("questionsArea")
+        let finished = document.getElementById("questionArea")
         finished.classList.add("hide")
+    } else {
+
+
+        let questionIndex = Math.floor(Math.random() * totalQuestions.length)
+
+        currentQuestion = totalQuestions[questionIndex]
+        question.innerText = currentQuestion.question
+
+        answers.forEach(answer => {
+            let number = answer.dataset["answer"]
+            answer.innerText = currentQuestion["choice" + number]
+        })
+
+        totalQuestions.splice(questionIndex, 1)
+        questions.splice(questionIndex, 1)
     }
-    let questionIndex = Math.floor(Math.random() * totalQuestions.length)
-    currentQuestion = questions[questionIndex]
-    question.innerText = currentQuestion.question
-
-
-    answers.forEach(answer => {
-        let number = answer.dataset["answer"]
-        answer.innerText = currentQuestion["choice" + number]
-    })
-    
-    questions.splice(questionIndex, 1)
-    
 }
 
 answers.forEach(answer => {
@@ -96,8 +98,8 @@ answers.forEach(answer => {
 
         setTimeout(() => {
             selection.parentElement.classList.remove(outcome)
-            
-            
+
+
             newQuestion()
         }, 2000)
     })
