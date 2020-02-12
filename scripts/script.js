@@ -28,6 +28,9 @@ getCategories = () => {
                 let catChoice = document.getElementById("categoryList");
                 let result = catChoice.options[catChoice.selectedIndex].id;
                 console.log(result)
+                let started = document.getElementById("selectArea")
+                started.classList.add("hide")
+                getQuiz()
                 })
 
             
@@ -45,7 +48,9 @@ let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 
 getQuiz = () => {
-
+    let started = document.getElementById("questionArea")
+    started.classList.remove("hide")
+    
     fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
         .then(data => {
             return data.json() //converts received data to JSON
