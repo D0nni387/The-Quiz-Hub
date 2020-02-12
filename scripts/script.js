@@ -33,10 +33,9 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
         questions = loadedQuestions.results.map(loadedQuestion => {
             const formatQuestion = {
                 question: loadedQuestion.question
-            };
+            }
 
             formatQuestion.answer = Math.floor(Math.random() * 3) + 1
-
 
             const answerChoices = [...loadedQuestion.incorrect_answers]
             answerChoices.splice(
@@ -64,8 +63,10 @@ newQuestion = () => {
 
 
     if (totalQuestions.length == 0) {
+
         let finished = document.getElementById("questionArea")
         finished.classList.add("hide")
+
         let finalScore = document.getElementById("score")
         finalScore.innerHTML = (`${score} / 10`)
     } else {
@@ -94,8 +95,9 @@ answers.forEach(answer => {
         let outcome = 'wrong'
         if (selectedAnswer == currentQuestion.answer) {
             outcome = 'correct'
-            score ++ 
+            score++
         }
+        
         selection.parentElement.classList.add(outcome)
         let outcomeText = document.getElementById("outcome")
         outcomeText.innerText = outcome
