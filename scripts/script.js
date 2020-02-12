@@ -66,7 +66,8 @@ newQuestion = () => {
     if (totalQuestions.length == 0) {
         let finished = document.getElementById("questionArea")
         finished.classList.add("hide")
-        console.log(score)
+        let finalScore = document.getElementById("score")
+        finalScore.innerHTML = (`${score} / 10`)
     } else {
 
 
