@@ -1,3 +1,6 @@
+let baseURL = "https://opentdb.com/api.php?amount=10&category="
+let catChoice = 0
+
 getCategories = () => {
 
     fetch("https://opentdb.com/api_category.php")
@@ -19,6 +22,9 @@ getCategories = () => {
                 categoryOption.classList.add("category"); //adds class to <option> tag
                 document.getElementById("categoryList").appendChild(categoryOption); //items to be added to categoryList class item in DOM
             });
+            let catChoice = document.getElementById("categoryList");
+            let result = catChoice.options[catChoice.selectedIndex].id;
+            console.log(result)
         });
 }
 
