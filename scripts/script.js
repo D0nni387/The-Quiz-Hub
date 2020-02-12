@@ -66,6 +66,7 @@ newQuestion = () => {
     if (totalQuestions.length == 0) {
         let finished = document.getElementById("questionArea")
         finished.classList.add("hide")
+        console.log(score)
     } else {
 
 
@@ -92,6 +93,7 @@ answers.forEach(answer => {
         let outcome = 'wrong'
         if (selectedAnswer == currentQuestion.answer) {
             outcome = 'correct'
+            score ++ 
         }
         selection.parentElement.classList.add(outcome)
         let outcomeText = document.getElementById("outcome")
