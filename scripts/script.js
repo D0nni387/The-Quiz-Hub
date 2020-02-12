@@ -1,5 +1,6 @@
 let baseURL = "https://opentdb.com/api.php?amount=10&category="
-let catChoice = 0
+let catId = document.getElementById("catSubmit")
+let id = 0
 
 getCategories = () => {
 
@@ -21,11 +22,17 @@ getCategories = () => {
                 categoryOption.id = category.id; //adds id ref to <option> tag
                 categoryOption.classList.add("category"); //adds class to <option> tag
                 document.getElementById("categoryList").appendChild(categoryOption); //items to be added to categoryList class item in DOM
-            });
-            let catChoice = document.getElementById("categoryList");
-            let result = catChoice.options[catChoice.selectedIndex].id;
-            console.log(result)
-        });
+            })
+           
+            catId.addEventListener('click', defineCats = () => {
+                let catChoice = document.getElementById("categoryList");
+                let result = catChoice.options[catChoice.selectedIndex].id;
+                console.log(result)
+                })
+
+            
+            
+        })
 }
 
 getCategories()
