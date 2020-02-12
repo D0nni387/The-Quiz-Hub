@@ -53,6 +53,7 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple")
 
 startGame = () => {
     totalQuestions = [...questions]
+    score = 0
     newQuestion()
 }
 
