@@ -22,20 +22,20 @@ getCategories = () => {
                 categoryOption.classList.add("category") //adds class to <option> tag
                 document.getElementById("categoryList").appendChild(categoryOption) //items to be added to categoryList class item in DOM
             })
-           
+
             catId.addEventListener('click', defineCats = () => {
+                //Get Category Choice From Dropdown element
                 let catChoice = document.getElementById("categoryList")
                 id = catChoice.options[catChoice.selectedIndex].id
+                //Get difficulty Choice From Dropdown element
                 let diffChoice = document.getElementById("difficultySelect")
                 diff = diffChoice.options[diffChoice.selectedIndex].id
+                //Hide selection area
                 let started = document.getElementById("selectArea")
-                started.classList.add("hide")              
+                started.classList.add("hide")
 
                 getQuiz()
-                })
-
-            
-            
+            })
         })
 }
 
@@ -49,10 +49,10 @@ let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 
 getQuiz = () => {
-    
+
     let started = document.getElementById("questionArea")
     started.classList.remove("hide")
-    
+
     fetch(`https://opentdb.com/api.php?amount=10&category=${id}&difficulty=${diff}&type=multiple`)
         .then(data => {
             return data.json() //converts received data to JSON
