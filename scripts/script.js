@@ -96,7 +96,7 @@ newQuestion = () => {
         finished.classList.add("hide")
 
         let finalScore = document.getElementById("score")
-        finalScore.innerHTML = (`${score} / ${quant}`)
+        finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
     } else {
 
 
