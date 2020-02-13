@@ -29,11 +29,10 @@ getCategories = () => {
                 diff = diffChoice.options[diffChoice.selectedIndex].id
                 //Get Question Quantity
                 let quantChoice = document.getElementById("questionCount")
-                quant = quantChoice.options[diffChoice.selectedIndex].id                
+                quant = quantChoice.options[diffChoice.selectedIndex].id
                 //Hide selection area
-                
                 start.classList.add("hide")
-
+   
                 getQuiz()
             })
         })
@@ -54,6 +53,8 @@ let restartNew = document.getElementById("restartNew")
 let showScore = document.getElementById("completedArea")
 let finished = document.getElementById("questionArea")
 let finalScore = document.getElementById("score")
+
+let outcomeText = document.getElementById("outcome")
 
 getQuiz = () => {
     let started = document.getElementById("questionArea")
@@ -94,31 +95,20 @@ getQuiz = () => {
 
 
 newQuestion = () => {
-
+    outcomeText.innerText = ("")
 
     if (totalQuestions.length == 0) {
-
-        
         finished.classList.add("hide")
-
-        
         showScore.classList.remove("hide")
-
-        
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
     } else {
-
-
         let questionIndex = Math.floor(Math.random() * totalQuestions.length)
-
         currentQuestion = totalQuestions[questionIndex]
         question.innerHTML = currentQuestion.question
-
         answers.forEach(answer => {
             let number = answer.dataset["answer"]
             answer.innerHTML = currentQuestion["choice" + number]
         })
-
         totalQuestions.splice(questionIndex, 1)
         questions.splice(questionIndex, 1)
     }
@@ -134,15 +124,11 @@ answers.forEach(answer => {
             outcome = 'correct'
             score++
         }
-
         selection.parentElement.classList.add(outcome)
-        let outcomeText = document.getElementById("outcome")
+        
         outcomeText.innerText = outcome
-
         setTimeout(() => {
             selection.parentElement.classList.remove(outcome)
-
-
             newQuestion()
         }, 2000)
     })
