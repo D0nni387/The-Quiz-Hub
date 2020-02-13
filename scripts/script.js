@@ -31,8 +31,8 @@ getCategories = () => {
                 let quantChoice = document.getElementById("questionCount")
                 quant = quantChoice.options[diffChoice.selectedIndex].id                
                 //Hide selection area
-                let started = document.getElementById("selectArea")
-                started.classList.add("hide")
+                
+                start.classList.add("hide")
 
                 getQuiz()
             })
@@ -42,11 +42,18 @@ getCategories = () => {
 getCategories()
 
 //Main Quiz Functions
+let start = document.getElementById("selectArea")
+
 let catId = document.getElementById("catSubmit")
 let currentQuestion = {}
 let answers = Array.from(document.getElementsByClassName("answer-format"))
 let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
+let restartQuiz = document.getElementById("restartSame")
+let restartNew = document.getElementById("restartNew")
+let showScore = document.getElementById("completedArea")
+let finished = document.getElementById("questionArea")
+let finalScore = document.getElementById("score")
 
 getQuiz = () => {
     let started = document.getElementById("questionArea")
@@ -86,19 +93,18 @@ getQuiz = () => {
 
 
 
-//Not sure on this yet!
 newQuestion = () => {
 
 
     if (totalQuestions.length == 0) {
 
-        let finished = document.getElementById("questionArea")
+        
         finished.classList.add("hide")
 
-        let showScore = document.getElementById("completedArea")
+        
         showScore.classList.remove("hide")
 
-        let finalScore = document.getElementById("score")
+        
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
     } else {
 
@@ -141,3 +147,4 @@ answers.forEach(answer => {
         }, 2000)
     })
 })
+
