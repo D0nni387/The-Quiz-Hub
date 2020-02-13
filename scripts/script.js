@@ -1,7 +1,3 @@
-let catId = document.getElementById("catSubmit")
-
-
-
 getCategories = () => {
 
     fetch("https://opentdb.com/api_category.php")
@@ -46,7 +42,7 @@ getCategories = () => {
 getCategories()
 
 //Main Quiz Functions
-
+let catId = document.getElementById("catSubmit")
 let currentQuestion = {}
 let answers = Array.from(document.getElementsByClassName("answer-format"))
 let question = document.getElementById("question");
