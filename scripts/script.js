@@ -95,6 +95,9 @@ newQuestion = () => {
         let finished = document.getElementById("questionArea")
         finished.classList.add("hide")
 
+        let showScore = document.getElementById("completedArea")
+        showScore.classList.remove("hide")
+
         let finalScore = document.getElementById("score")
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
     } else {
