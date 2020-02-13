@@ -12,30 +12,40 @@
 </head>
 
 <body>
+<div class="container-fluid outcome">
+  <div id="selectArea" class="row">
+    <div class="col-12">
+      <h3>Select a topic</h3>
+      <select id="categoryList">
 
-  <div id="selectArea">
-    <h3>Select a topic</h3>
-    <select id="categoryList">
-      
-    </select>
-    <h3>Select Difficulty</h3>
-    <select id="difficultySelect">
-      <option id="easy">Easy</option>
-      <option id="medium">Medium</option>
-      <option id="hard">Hard</option>
-    </select>
+      </select>
+    </div>
     <br>
-    <h3>How Many Questions?</h3>
-    <select id="questionCount">
-      <option id="10">10</option>
-      <option id="15">15</option>
-      <option id="20">20</option>
-      <option id="25">25</option>
-    </select>
+    <div class="col-12">
+      <h3>Select Difficulty</h3>
+
+      <select id="difficultySelect">
+        <option id="easy">Easy</option>
+        <option id="medium">Medium</option>
+        <option id="hard">Hard</option>
+      </select>
+    </div>
     <br>
-    
-    <button class="submit" id="catSubmit">Let's Get Started!</button>
+    <div class="col-12">
+      <h3>How Many Questions?</h3>
+      <select id="questionCount">
+        <option id="10">10</option>
+        <option id="15">15</option>
+        <option id="20">20</option>
+        <option id="25">25</option>
+      </select>
+      <br>
+    </div>
+    <div class="col-12">
+      <button class="submit" id="catSubmit">Let's Get Started!</button>
+    </div>
   </div>
+</div>
 
   <section id="questionArea" class="question-area hide">
     <h2 id="question" class="question">This is the default text and you shouldn't see my shame!</h2>
