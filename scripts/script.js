@@ -30,6 +30,9 @@ getCategories = () => {
                 //Get difficulty Choice From Dropdown element
                 let diffChoice = document.getElementById("difficultySelect")
                 diff = diffChoice.options[diffChoice.selectedIndex].id
+                //Get Question Quantity
+                let quantChoice = document.getElementById("questionCount")
+                quant = quantChoice.options[diffChoice.selectedIndex].id                
                 //Hide selection area
                 let started = document.getElementById("selectArea")
                 started.classList.add("hide")
@@ -49,11 +52,11 @@ let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 
 getQuiz = () => {
-
+    console.log(quant)
     let started = document.getElementById("questionArea")
     started.classList.remove("hide")
 
-    fetch(`https://opentdb.com/api.php?amount=10&category=${id}&difficulty=${diff}&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
         .then(data => {
             return data.json() //converts received data to JSON
         })
@@ -97,7 +100,7 @@ newQuestion = () => {
         finished.classList.add("hide")
 
         let finalScore = document.getElementById("score")
-        finalScore.innerHTML = (`${score} / 10`)
+        finalScore.innerHTML = (`${score} / ${quant}`)
     } else {
 
 
