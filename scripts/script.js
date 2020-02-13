@@ -1,3 +1,23 @@
+//Main Quiz Functions
+
+//Start Game Variables
+let start = document.getElementById("selectArea")
+let catId = document.getElementById("catSubmit")
+
+//In Progress Quiz Variables
+let question = document.getElementById("question");
+let questions = []; //sets blank array for API to populate
+let outcomeText = document.getElementById("outcome")
+let answers = Array.from(document.getElementsByClassName("answer-format"))
+let currentQuestion = {}
+let finished = document.getElementById("questionArea")
+
+//End Game Variables
+let showScore = document.getElementById("completedArea")
+let finalScore = document.getElementById("score")
+let restartQuiz = document.getElementById("restartSame")
+let restartNew = document.getElementById("restartNew")
+
 getCategories = () => {
 
     fetch("https://opentdb.com/api_category.php")
@@ -39,22 +59,6 @@ getCategories = () => {
 }
 
 getCategories()
-
-//Main Quiz Functions
-let start = document.getElementById("selectArea")
-
-let catId = document.getElementById("catSubmit")
-let currentQuestion = {}
-let answers = Array.from(document.getElementsByClassName("answer-format"))
-let question = document.getElementById("question");
-let questions = []; //sets blank array for API to populate
-let restartQuiz = document.getElementById("restartSame")
-let restartNew = document.getElementById("restartNew")
-let showScore = document.getElementById("completedArea")
-let finished = document.getElementById("questionArea")
-let finalScore = document.getElementById("score")
-
-let outcomeText = document.getElementById("outcome")
 
 getQuiz = () => {
     let started = document.getElementById("questionArea")
@@ -134,11 +138,12 @@ answers.forEach(answer => {
     })
 })
 
+//Restart Quiz With Same Perams
 restartQuiz.addEventListener('click', restartSame = () => {
     showScore.classList.add("hide")
     getQuiz()
 })
-
+//Restart The Application
 restartNew.addEventListener('click', restartNew = () => {
     showScore.classList.add("hide")
     start.classList.remove("hide")
