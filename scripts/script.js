@@ -148,3 +148,13 @@ answers.forEach(answer => {
     })
 })
 
+restartQuiz.addEventListener('click', restartSame = () => {
+    showScore.classList.add("hide")
+    getQuiz()
+})
+
+restartNew.addEventListener('click', restartNew = () => {
+    showScore.classList.add("hide")
+    start.classList.remove("hide")
+    getCategories()
+})
