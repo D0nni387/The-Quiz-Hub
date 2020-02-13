@@ -28,8 +28,6 @@ getCategories = () => {
                 id = catChoice.options[catChoice.selectedIndex].id
                 let diffChoice = document.getElementById("difficultySelect")
                 diff = diffChoice.options[diffChoice.selectedIndex].id
-                console.log(diff)
-                console.log(id)
                 let started = document.getElementById("selectArea")
                 started.classList.add("hide")              
 
@@ -51,8 +49,7 @@ let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 
 getQuiz = () => {
-    console.log(id)
-    console.log(diff)
+    
     let started = document.getElementById("questionArea")
     started.classList.remove("hide")
     
