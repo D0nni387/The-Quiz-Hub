@@ -26,6 +26,9 @@ getCategories = () => {
             catId.addEventListener('click', defineCats = () => {
                 let catChoice = document.getElementById("categoryList")
                 id = catChoice.options[catChoice.selectedIndex].id
+                let diffChoice = document.getElementById("difficultySelect")
+                diff = diffChoice.options[diffChoice.selectedIndex].id
+                console.log(diff)
                 console.log(id)
                 let started = document.getElementById("selectArea")
                 started.classList.add("hide")              
@@ -49,10 +52,11 @@ let questions = []; //sets blank array for API to populate
 
 getQuiz = () => {
     console.log(id)
+    console.log(diff)
     let started = document.getElementById("questionArea")
     started.classList.remove("hide")
     
-    fetch(`https://opentdb.com/api.php?amount=10&category=${id}&difficulty=medium&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=10&category=${id}&difficulty=${diff}&type=multiple`)
         .then(data => {
             return data.json() //converts received data to JSON
         })
