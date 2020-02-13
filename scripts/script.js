@@ -1,6 +1,7 @@
 let catId = document.getElementById("catSubmit")
 
 
+
 getCategories = () => {
 
     fetch("https://opentdb.com/api_category.php")
@@ -52,7 +53,6 @@ let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 
 getQuiz = () => {
-    console.log(quant)
     let started = document.getElementById("questionArea")
     started.classList.remove("hide")
 
@@ -107,11 +107,11 @@ newQuestion = () => {
         let questionIndex = Math.floor(Math.random() * totalQuestions.length)
 
         currentQuestion = totalQuestions[questionIndex]
-        question.innerText = currentQuestion.question
+        question.innerHTML = currentQuestion.question
 
         answers.forEach(answer => {
             let number = answer.dataset["answer"]
-            answer.innerText = currentQuestion["choice" + number]
+            answer.innerHTML = currentQuestion["choice" + number]
         })
 
         totalQuestions.splice(questionIndex, 1)
