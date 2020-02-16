@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
 
 body {
-    background-color: navy;
-    color: oldlace;
+    background-image: url(../images/background-loop.png);
 }
 
 .question {
