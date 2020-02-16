@@ -21,7 +21,11 @@ body {
 
 .answer-format {
     background-color: aqua;
-    margin: 10px;
+    margin: 1rem;
+    border-color: 5px #000;
+    border-style: solid; 
+    border-radius: 10px;
+    text-align: center;
 }
 
 .outcome {
