@@ -73,9 +73,7 @@ getQuiz = () => {
                 const formatQuestion = {
                     question: loadedQuestion.question
                 }
-
                 formatQuestion.answer = Math.floor(Math.random() * 3) + 1
-
                 const answerChoices = [...loadedQuestion.incorrect_answers]
                 answerChoices.splice(
                     formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
