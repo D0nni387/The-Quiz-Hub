@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
 
 body {
-    background-image: url(../images/background-loop.png);
+    background-image: url(../images/background-loop.jpg);
 }
 
 .question {
@@ -28,4 +28,16 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
+}
+
+.select-area {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: royalblue;
+}
+
+.select-area .select {
+    width: 120%;
+    background: url(arrow.png);
+    background-position: 80% center;
+    overflow: hidden;
 }
