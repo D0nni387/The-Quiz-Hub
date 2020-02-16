@@ -35,9 +35,3 @@ body {
     color: royalblue;
 }
 
-.select-area .select {
-    width: 120%;
-    background: url(arrow.png);
-    background-position: 80% center;
-    overflow: hidden;
-}
