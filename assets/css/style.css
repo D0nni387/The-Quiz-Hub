@@ -33,13 +33,6 @@ body {
     justify-content: center;
 }
 
-.answer-format {
-    background-color: #ffb366;
-    border-color: 5px #000;
-    border-style: solid; 
-    border-radius: 10px;
-    text-align: center;
-}
 
 .outcome {
     align-content: center;
@@ -51,9 +44,17 @@ body {
     justify-content: center;
 }
 
-.answer {
+.answers {
+    display: flex;
+    justify-content: center;
     cursor: pointer;
+    background-color: #ffb366;
     margin: 1rem;
+    border-radius: 5px;
+    border-color: #000;
+    border-width: 2px;
+    border-style: solid;
+    padding-top: 5px;
 }
 
 .intro {
