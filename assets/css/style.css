@@ -67,6 +67,14 @@ body {
     text-align: center;
 }
 
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
 /* Based on the loader lesson W3 Schools */
 
 #loading {
