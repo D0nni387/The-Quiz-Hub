@@ -42,8 +42,9 @@ body {
 }
 
 .select-area {
-    background-color: rgba(0, 0, 0, 0.7);
     color: royalblue;
+    display: flex;
+    justify-content: center;
 }
 
 .answer {
