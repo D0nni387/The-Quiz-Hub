@@ -10,7 +10,7 @@ let started = document.getElementById("questionArea")
 let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 let outcomeText = document.getElementById("outcome")
-let answers = Array.from(document.getElementsByClassName("answer-format"))
+let answers = Array.from(document.getElementsByClassName("answer"))
 let currentQuestion = {}
 let finished = document.getElementById("questionArea")
 
