@@ -134,14 +134,13 @@ answers.forEach(answer => {
         let selection = event.target
         let selectedAnswer = selection.dataset["answer"]
 
-        let outcome = 'wrong'
+        let outcome = 'incorrect'
         if (selectedAnswer == currentQuestion.answer) {
             outcome = 'correct'
             score++
         }
         selection.parentElement.classList.add(outcome)
 
-        outcomeText.innerText = outcome
         setTimeout(() => {
             selection.parentElement.classList.remove(outcome)
             newQuestion()
