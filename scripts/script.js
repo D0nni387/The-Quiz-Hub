@@ -86,12 +86,12 @@ getQuiz = () => {
             })
             startGame()
         })
+}
 
-    startGame = () => {
-        totalQuestions = [...questions]
-        score = 0
-        newQuestion()
-    }
+startGame = () => {
+    totalQuestions = [...questions]
+    score = 0
+    newQuestion()
 }
 
 
