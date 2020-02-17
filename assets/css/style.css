@@ -2,6 +2,7 @@
 
 body {
     background-color: #ffcc66;
+    font-family: "Solway", sans-serif;
 }
 
 .logo {
@@ -36,8 +37,6 @@ body {
 }
 
 .outcome {
-    display: flex;
-    justify-content: center;
     align-content: center;
 }
 
@@ -53,9 +52,11 @@ body {
 }
 
 .intro {
-    display: flex;
-    justify-content: center;
     align-content: center;
     text-align: center;
 }
 
+.score-area {
+    align-content: center;
+    text-align: center;
+}
