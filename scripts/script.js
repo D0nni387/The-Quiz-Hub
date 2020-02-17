@@ -55,10 +55,12 @@ getCategories = () => {
    
                 getQuiz()
             })
+            
+            })
             .catch(err => {
                 console.error(err)
-            })
         })
+
 }
 
 getCategories()
