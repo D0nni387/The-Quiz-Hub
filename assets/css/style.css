@@ -5,6 +5,11 @@ body {
     font-family: "Solway", sans-serif;
 }
 
+.header-format {
+    display: flex;
+    justify-content: center;    
+}
+
 .logo {
     color: royalblue;
     border: #000;
