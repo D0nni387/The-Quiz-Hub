@@ -12,9 +12,12 @@
 </head>
 
 <body>
-  <div class="container outcome">
+  <header class="container-fluid">
+    <div class="row"><h1 class="logo">The Quiz Hub</h1></div></header>
+  
+  <section class="container-fluid intro select-area">
     <div id="selectArea" class="row">
-      <div class="col-12 select-area">
+      <div class="col-12">
         <h3>Select a topic</h3>
         <select id="categoryList">
 
@@ -22,7 +25,7 @@
       </div>
       <br>
 
-      <div class="col-12 select-area">
+      <div class="col-12">
         <h3>Select Difficulty</h3>
 
         <select id="difficultySelect">
@@ -31,8 +34,8 @@
           <option id="hard">Hard</option>
         </select>
       </div>
-      <br>
-      <div class="col-12 select-area">
+      
+      <div class="col-12">
         <h3>How Many Questions?</h3>
         <select id="questionCount">
           <option id="10">10</option>
@@ -40,27 +43,27 @@
           <option id="20">20</option>
           <option id="25">25</option>
         </select>
-        <br>
+       
       </div>
-      <div class="col-12 select-area">
+      <div class="col-12">
         <button class="submit" id="catSubmit">Let's Get Started!</button>
       </div>
     </div>
-  </div>
+  </section>
 
-  <section id="questionArea" class="question-area container-fluid">
+  <section id="questionArea" class="container-fluid question-area hide">
     <h2 id="question" class="question select-area">This is the default text and you shouldn't see my shame!</h2>
     <div class="answerarea row">
-      <div class="answer col-12">
+      <div class="answer col-sm-6 col-md-12">
         <p class="answer-format" data-answer="1">Default Answer 1</p>
       </div>
-      <div class="answer col-12">
+      <div class="answer col-sm-6 col-md-12">
         <p class="answer-format" data-answer="2">Default Answer 2</p>
       </div>
-      <div class="answer col-12">
+      <div class="answer col-sm-6 col-md-12">
         <p class="answer-format" data-answer="3">Default Answer 3</p>
       </div>
-      <div class="answer col-12">
+      <div class="answer col-sm-6 col-md-12">
         <p class="answer-format" data-answer="4">Default Answer 4</p>
       </div>
     </div>
