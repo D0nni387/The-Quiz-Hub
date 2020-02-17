@@ -34,7 +34,7 @@ body {
 }
 
 .answer-format {
-    background-color: aqua;
+    background-color: #ffb366;
     border-color: 5px #000;
     border-style: solid; 
     border-radius: 10px;
@@ -65,3 +65,19 @@ body {
     align-content: center;
     text-align: center;
 }
+
+/* Based on the loader lesson W3 Schools */
+
+#loading {
+    border: 16px solid #ffb366; /* Light grey */
+    border-top: 16px solid #668cff; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
