@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
 
 body {
-    background-image: url(../images/background-loop.jpg);
+    background-color: #ffcc66;
+}
+
+.logo {
+    color: royalblue;
+    border: #000;
+    font-size: 5rem;
+    text-align: center;
+    padding: 2rem 0rem;
 }
 
 .question {
@@ -21,7 +29,6 @@ body {
 
 .answer-format {
     background-color: aqua;
-    margin: 1rem;
     border-color: 5px #000;
     border-style: solid; 
     border-radius: 10px;
@@ -37,5 +44,17 @@ body {
 .select-area {
     background-color: rgba(0, 0, 0, 0.7);
     color: royalblue;
+}
+
+.answer {
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
 }
 
