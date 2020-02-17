@@ -3,8 +3,10 @@
 //Start Game Variables
 let start = document.getElementById("selectArea")
 let catId = document.getElementById("catSubmit")
+let loading = document.getElementById("loading")
 
 //In Progress Quiz Variables
+let started = document.getElementById("questionArea")
 let question = document.getElementById("question");
 let questions = []; //sets blank array for API to populate
 let outcomeText = document.getElementById("outcome")
@@ -52,13 +54,13 @@ getCategories = () => {
                 quant = quantChoice.options[diffChoice.selectedIndex].id
                 //Hide selection area
                 start.classList.add("hide")
-   
+
                 getQuiz()
             })
-            
-            })
-            .catch(err => {
-                console.error(err)
+
+        })
+        .catch(err => {
+            console.error(err)
         })
 
 }
@@ -66,8 +68,7 @@ getCategories = () => {
 getCategories()
 
 getQuiz = () => {
-    let started = document.getElementById("questionArea")
-    started.classList.remove("hide")
+    loading.classList.remove("hide")
 
     fetch(`https://opentdb.com/api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
         .then(data => {
@@ -78,6 +79,7 @@ getQuiz = () => {
                 const formatQuestion = {
                     question: loadedQuestion.question
                 }
+                //Populates answers array and randomises answer locations
                 formatQuestion.answer = Math.floor(Math.random() * 3) + 1
                 const answerChoices = [...loadedQuestion.incorrect_answers]
                 answerChoices.splice(
@@ -100,6 +102,9 @@ startGame = () => {
     totalQuestions = [...questions]
     score = 0
     newQuestion()
+    started.classList.remove("hide")
+    loading.classList.add("hide")
+
 }
 
 
@@ -135,7 +140,7 @@ answers.forEach(answer => {
             score++
         }
         selection.parentElement.classList.add(outcome)
-        
+
         outcomeText.innerText = outcome
         setTimeout(() => {
             selection.parentElement.classList.remove(outcome)
