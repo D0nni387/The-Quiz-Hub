@@ -55,6 +55,9 @@ getCategories = () => {
    
                 getQuiz()
             })
+            .catch(err => {
+                console.error(err)
+            })
         })
 }
 
@@ -85,6 +88,9 @@ getQuiz = () => {
                 return formatQuestion
             })
             startGame()
+        })
+        .catch(err => {
+            console.error(err)
         })
 }
 
