@@ -1,23 +1,24 @@
 //Main Quiz Functions
 
 //Start Game Variables
-let start = document.getElementById("selectArea")
-let catId = document.getElementById("catSubmit")
-let loading = document.getElementById("loading")
+const start = document.getElementById("selectArea")
+const catId = document.getElementById("catSubmit")
+const loading = document.getElementById("loading")
+const catChoice = document.getElementById("categoryList")
+const started = document.getElementById("questionArea")
+const question = document.getElementById("question");
+const quantChoice = document.getElementById("questionCount")
+const diffChoice = document.getElementById("difficultySelect")
+const showScore = document.getElementById("completedArea")
+const finalScore = document.getElementById("score")
+const restartQuiz = document.getElementById("restartSame")
+const restartNew = document.getElementById("restartNew")
 
-//In Progress Quiz Variables
-let started = document.getElementById("questionArea")
-let question = document.getElementById("question");
-let questions = []; //sets blank array for API to populate
 let answers = Array.from(document.getElementsByClassName("answer"))
-let currentQuestion = {}
 let finished = document.getElementById("questionArea")
+let questions = []; //sets blank array for API to populate
+let currentQuestion = {}
 
-//End Game Variables
-let showScore = document.getElementById("completedArea")
-let finalScore = document.getElementById("score")
-let restartQuiz = document.getElementById("restartSame")
-let restartNew = document.getElementById("restartNew")
 
 getCategories = () => {
 
@@ -43,13 +44,13 @@ getCategories = () => {
 
             catId.addEventListener('click', defineCats = () => {
                 //Get Category Choice From Dropdown element
-                let catChoice = document.getElementById("categoryList")
+                
                 id = catChoice.options[catChoice.selectedIndex].id
                 //Get difficulty Choice From Dropdown element
-                let diffChoice = document.getElementById("difficultySelect")
+                
                 diff = diffChoice.options[diffChoice.selectedIndex].id
                 //Get Question Quantity
-                let quantChoice = document.getElementById("questionCount")
+                
                 quant = quantChoice.options[diffChoice.selectedIndex].id
                 //Hide selection area
                 start.classList.add("hide")
