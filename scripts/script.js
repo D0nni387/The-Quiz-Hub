@@ -11,18 +11,30 @@ const quantChoice = document.getElementById("questionCount")
 const diffChoice = document.getElementById("difficultySelect")
 const showScore = document.getElementById("completedArea")
 const finalScore = document.getElementById("score")
-const restartQuiz = document.getElementById("restartSame")
-const restartNew = document.getElementById("restartNew")
-
+let restartQuiz = document.getElementById("restartSame")
+let restartNew = document.getElementById("restartNew")
+let chosen = true
 let answers = Array.from(document.getElementsByClassName("answer"))
 let finished = document.getElementById("questionArea")
 let questions = []; //sets blank array for API to populate
 let currentQuestion = {}
 
+let baseURL =("https://opentdb.com/")
+let dataUrl = ""
+
+function getData(chosen) {
+    if (chosen) {
+        dataUrl = (`${baseURL}api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
+    }
+    else {
+        dataUrl = (`${baseURL}api_category.php`)
+    }
+}
+
 
 getCategories = () => {
-
-    fetch("https://opentdb.com/api_category.php")
+    getData()
+    fetch(dataUrl)
 
         .then(function (response) {
             return response.json() //Returns API Data as JSON
@@ -69,8 +81,8 @@ getCategories()
 
 getQuiz = () => {
     loading.classList.remove("hide")
-
-    fetch(`https://opentdb.com/api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
+    getData(chosen)
+    fetch(dataUrl)
         .then(data => {
             return data.json() //converts received data to JSON
         })
