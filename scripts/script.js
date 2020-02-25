@@ -11,81 +11,61 @@ const quantChoice = document.getElementById("questionCount")
 const diffChoice = document.getElementById("difficultySelect")
 const showScore = document.getElementById("completedArea")
 const finalScore = document.getElementById("score")
-let restartQuiz = document.getElementById("restartSame")
-let restartNew = document.getElementById("restartNew")
-const baseURL = ("https://opentdb.com/")
+const restartQuiz = document.getElementById("restartSame")
+const restartNew = document.getElementById("restartNew")
 
 let answers = Array.from(document.getElementsByClassName("answer"))
 let finished = document.getElementById("questionArea")
 let questions = []; //sets blank array for API to populate
 let currentQuestion = {}
-let chosen = false
-let categoryList = ""
-let quant = 10
-let id = 12
-let diff = "medium"
-
-function getData() {
-    if (chosen == true) {
-        fetch(`https://opentdb.com/api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
-            .then(response => {
-                return response.json()
-            })
-            .then(loadedQuestions => {
-                questions = loadedQuestions.results.map
-            })
-    } else {
-        fetch(`${baseURL}api_category.php`)
-            .then(response => {
-                return response.json()
-            })
-            .then(category => {
-                categoryList = category.trivia_categories
-                console.log(categoryList)
-            })
-        getCategories()
-    }
-}
 
 
 getCategories = () => {
 
-    //Access category list
-    categoryList.forEach(function (category) {
+    fetch("https://opentdb.com/api_category.php")
 
-        let categoryOption = document.createElement("option") //Creates Option Item In DOM
-        let categoryName = document.createElement("p") //Creates Nested <p> tags 
-        let name = document.createTextNode(category.name) //Defines name of the item
+        .then(function (response) {
+            return response.json() //Returns API Data as JSON
+        })
+        .then(function (category) {
+            let categoryList = category.trivia_categories; //Access category list
+            categoryList.forEach(function (category) {
 
-        categoryName.appendChild(name)
-        categoryOption.appendChild(categoryName)
-        categoryOption.id = category.id //adds id ref to <option> tag
-        categoryOption.classList.add("category") //adds class to <option> tag
-        document.getElementById("categoryList").appendChild(categoryOption) //items to be added to categoryList class item in DOM
-    })
+                let categoryOption = document.createElement("option") //Creates Option Item In DOM
+                let categoryName = document.createElement("p") //Creates Nested <p> tags 
+                let name = document.createTextNode(category.name) //Defines name of the item
 
-    catId.addEventListener('click', defineCats = () => {
-        //Get Category Choice From Dropdown element
+                categoryName.appendChild(name)
+                categoryOption.appendChild(categoryName)
+                categoryOption.id = category.id //adds id ref to <option> tag
+                categoryOption.classList.add("category") //adds class to <option> tag
+                document.getElementById("categoryList").appendChild(categoryOption) //items to be added to categoryList class item in DOM
+            })
 
-        id = catChoice.options[catChoice.selectedIndex].id
-        //Get difficulty Choice From Dropdown element
+            catId.addEventListener('click', defineCats = () => {
+                //Get Category Choice From Dropdown element
+                
+                id = catChoice.options[catChoice.selectedIndex].id
+                //Get difficulty Choice From Dropdown element
+                
+                diff = diffChoice.options[diffChoice.selectedIndex].id
+                //Get Question Quantity
+                
+                quant = quantChoice.options[diffChoice.selectedIndex].id
+                //Hide selection area
+                start.classList.add("hide")
 
-        diff = diffChoice.options[diffChoice.selectedIndex].id
-        //Get Question Quantity
+                getQuiz()
+            })
 
-        quant = quantChoice.options[diffChoice.selectedIndex].id
-        //Hide selection area
-        start.classList.add("hide")
-
-        getQuiz()
-    })
+        })
+        .catch(err => {
+            console.error(err)
+        })
 
 }
 
-
-
-
-getData()
+getCategories()
 
 getQuiz = () => {
     loading.classList.remove("hide")
