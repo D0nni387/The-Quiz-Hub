@@ -1,6 +1,3 @@
-//Main Quiz Functions
-
-//Start Game Variables
 const start = document.getElementById("selectArea")
 const catId = document.getElementById("catSubmit")
 const loading = document.getElementById("loading")
@@ -11,6 +8,8 @@ const quantChoice = document.getElementById("questionCount")
 const diffChoice = document.getElementById("difficultySelect")
 const showScore = document.getElementById("completedArea")
 const finalScore = document.getElementById("score")
+
+
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
 let chosen = true
@@ -19,67 +18,61 @@ let finished = document.getElementById("questionArea")
 let questions = []; //sets blank array for API to populate
 let currentQuestion = {}
 
-let baseURL =("https://opentdb.com/")
+let baseURL = ("https://opentdb.com/")
 let dataUrl = ""
 
 function getData(chosen) {
     if (chosen) {
         dataUrl = (`${baseURL}api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
-    }
-    else {
+    } else {
         dataUrl = (`${baseURL}api_category.php`)
     }
 }
 
 
-getCategories = () => {
+function categories() {
     getData()
     fetch(dataUrl)
-
         .then(function (response) {
-            return response.json() //Returns API Data as JSON
+            return response.json()
         })
         .then(function (category) {
-            let categoryList = category.trivia_categories; //Access category list
+            let categoryList = category.trivia_categories;
             categoryList.forEach(function (category) {
 
-                let categoryOption = document.createElement("option") //Creates Option Item In DOM
-                let categoryName = document.createElement("p") //Creates Nested <p> tags 
-                let name = document.createTextNode(category.name) //Defines name of the item
+                let categoryOption = document.createElement("option")
+                let categoryName = document.createElement("p")
+                let name = document.createTextNode(category.name)
 
                 categoryName.appendChild(name)
                 categoryOption.appendChild(categoryName)
-                categoryOption.id = category.id //adds id ref to <option> tag
-                categoryOption.classList.add("category") //adds class to <option> tag
-                document.getElementById("categoryList").appendChild(categoryOption) //items to be added to categoryList class item in DOM
+                categoryOption.id = category.id
+                categoryOption.classList.add("category")
+                document.getElementById("categoryList").appendChild(categoryOption)
             })
 
             catId.addEventListener('click', defineCats = () => {
-                //Get Category Choice From Dropdown element
-                
+
+
                 id = catChoice.options[catChoice.selectedIndex].id
-                //Get difficulty Choice From Dropdown element
-                
+
+
                 diff = diffChoice.options[diffChoice.selectedIndex].id
-                //Get Question Quantity
-                
+
+
                 quant = quantChoice.options[diffChoice.selectedIndex].id
-                //Hide selection area
+
                 start.classList.add("hide")
 
                 getQuiz()
             })
 
         })
-        .catch(err => {
-            console.error(err)
-        })
-
 }
 
-getCategories()
+categories()
 
-getQuiz = () => {
+function getQuiz() {
     loading.classList.remove("hide")
     getData(chosen)
     fetch(dataUrl)
@@ -110,7 +103,7 @@ getQuiz = () => {
         })
 }
 
-startGame = () => {
+function startGame() {
     totalQuestions = [...questions]
     score = 0
     newQuestion()
@@ -121,7 +114,7 @@ startGame = () => {
 
 
 
-newQuestion = () => {
+function newQuestion() {
 
     if (totalQuestions.length == 0) {
         finished.classList.add("hide")
@@ -138,32 +131,36 @@ newQuestion = () => {
         totalQuestions.splice(questionIndex, 1)
         questions.splice(questionIndex, 1)
     }
+    answerFormat()
 }
 
-answers.forEach(answer => {
-    answer.addEventListener('click', event => {
-        let selection = event.target
-        let selectedAnswer = selection.dataset["answer"]
+function answerFormat() {
+    answers.forEach(answer => {
+        answer.addEventListener('click', event => {
+            let selection = event.target
+            let selectedAnswer = selection.dataset["answer"]
 
-        let outcome = 'incorrect'
-        if (selectedAnswer == currentQuestion.answer) {
-            outcome = 'correct'
-            score++
-        }
-        selection.parentElement.classList.add(outcome)
+            let outcome = 'incorrect'
+            if (selectedAnswer == currentQuestion.answer) {
+                outcome = 'correct'
+                score++
+            }
+            selection.parentElement.classList.add(outcome)
 
-        setTimeout(() => {
-            selection.parentElement.classList.remove(outcome)
-            newQuestion()
-        }, 2000)
+            setTimeout(() => {
+                selection.parentElement.classList.remove(outcome)
+                newQuestion()
+            }, 2000)
+        })
     })
-})
+}
 
-//Restart Quiz With Same Perams
+
 restartQuiz.addEventListener('click', restartSame = () => {
     showScore.classList.add("hide")
     getQuiz()
 })
+
 //Restart The Application
 restartNew.addEventListener('click', restartNew = () => {
     showScore.classList.add("hide")
