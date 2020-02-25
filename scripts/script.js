@@ -53,6 +53,9 @@ function categories() {
                 document.getElementById("categoryList").appendChild(categoryOption)
             })
         })
+        .catch(err => {
+            console.error(err)
+        })
 }
 
 categories()
