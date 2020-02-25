@@ -29,14 +29,16 @@ function getData(chosen) {
     }
 }
 
-
+/**
+ * Retreieves category list and passes to the DOM
+ */
 function categories() {
     getData()
     fetch(dataUrl)
-        .then(function (response) {
+        .then(response => {
             return response.json()
         })
-        .then(function (category) {
+        .then(category => {
             let categoryList = category.trivia_categories;
             categoryList.forEach(function (category) {
 
@@ -50,28 +52,14 @@ function categories() {
                 categoryOption.classList.add("category")
                 document.getElementById("categoryList").appendChild(categoryOption)
             })
-
-            catId.addEventListener('click', defineCats = () => {
-
-
-                id = catChoice.options[catChoice.selectedIndex].id
-
-
-                diff = diffChoice.options[diffChoice.selectedIndex].id
-
-
-                quant = quantChoice.options[diffChoice.selectedIndex].id
-
-                start.classList.add("hide")
-
-                getQuiz()
-            })
-
         })
 }
 
 categories()
 
+/**
+ * Retrieves Quiz Data, sorts the data and passes to the DOM
+ */
 function getQuiz() {
     loading.classList.remove("hide")
     getData(chosen)
@@ -103,6 +91,9 @@ function getQuiz() {
         })
 }
 
+/**
+ * Starts game
+ */
 function startGame() {
     totalQuestions = [...questions]
     score = 0
@@ -113,9 +104,10 @@ function startGame() {
 }
 
 
-
+/**
+ * checks remaining questions and either ends the game if no questions left or gets next question
+ */
 function newQuestion() {
-
     if (totalQuestions.length == 0) {
         finished.classList.add("hide")
         showScore.classList.remove("hide")
@@ -134,6 +126,9 @@ function newQuestion() {
     answerFormat()
 }
 
+/**
+ * listens for answer selection and either 
+ */
 function answerFormat() {
     answers.forEach(answer => {
         answer.addEventListener('click', event => {
@@ -155,7 +150,7 @@ function answerFormat() {
     })
 }
 
-
+//unsure on how phrase these
 restartQuiz.addEventListener('click', restartSame = () => {
     showScore.classList.add("hide")
     getQuiz()
@@ -166,4 +161,12 @@ restartNew.addEventListener('click', restartNew = () => {
     showScore.classList.add("hide")
     start.classList.remove("hide")
     getCategories()
+})
+
+catId.addEventListener('click', defineCats = () => {
+    id = catChoice.options[catChoice.selectedIndex].id
+    diff = diffChoice.options[diffChoice.selectedIndex].id
+    quant = quantChoice.options[diffChoice.selectedIndex].id
+    start.classList.add("hide")
+    getQuiz()
 })
