@@ -87,7 +87,7 @@ trivia()
 function getQuiz() {
     
     console.log(quant)
-    loading.classList.remove("hide")
+    
     getData(chosen)
     fetch(dataUrl)
         .then(data => {
@@ -125,8 +125,6 @@ function startGame() {
     score = 0
     newQuestion()
     started.classList.remove("hide")
-    loading.classList.add("hide")
-
 }
 
 
@@ -192,6 +190,15 @@ function answerFormat() {
             }, 2500)
         })
     })
+}
+
+
+function loader(load){
+    if (load) {
+        loading.classList.remove("hide")
+    } else{
+        loading.classList.add("hide")
+    }
 }
 
 //unsure on how to place these!
