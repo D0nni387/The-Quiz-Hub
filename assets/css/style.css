@@ -90,3 +90,9 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+  
+  .answer {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
