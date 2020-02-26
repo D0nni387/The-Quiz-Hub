@@ -76,7 +76,15 @@ As people may want a longer game or shorter game the user is presented with the 
 
 ## Future Goals
 
+As this application develops going forward the future goals for the project are
 
+### Global Leaderboards
+
+With the user being presented with a score upon completion, ideally in the future as my skills increase, adding a leader board could help incetivise users to keep playing and trying to being their score or potentially beat a friend
+
+### Challenge Mode
+
+In future i would also like to add a challenge mode which would mix genres and test the user in an initial test of a chosen topic then on general knowledge which could also feed into a leaderboard system
 
 
 ---
