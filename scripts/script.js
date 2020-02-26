@@ -13,6 +13,7 @@ const dailyTrivia = document.getElementById("trivia")
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
 let chosen = true
+let load = true
 let answers = Array.from(document.getElementsByClassName("answer"))
 let finished = document.getElementById("questionArea")
 let questions = []; //sets blank array for API to populate
@@ -49,6 +50,7 @@ function getData(chosen) {
  * Retreieves category list and passes to the DOM
  */
 function categories() {
+    loader(load)
     getData()
     fetch(dataUrl)
         .then(response => {
@@ -70,7 +72,7 @@ function categories() {
             })
             
     
-
+            loader()
         })
         .catch(err => {
             console.error(err)
@@ -85,8 +87,7 @@ trivia()
  * Retrieves Quiz Data, sorts the data and passes to the DOM
  */
 function getQuiz() {
-    
-    console.log(quant)
+    loader(load)
     
     getData(chosen)
     fetch(dataUrl)
@@ -111,6 +112,7 @@ function getQuiz() {
                 return formatQuestion
             })
             startGame()
+            loader()
         })
         .catch(err => {
             console.error(err)
@@ -132,10 +134,13 @@ function startGame() {
  * checks remaining questions and either ends the game if no questions left or gets next question
  */
 function newQuestion() {
+    loader(load)
     if (totalQuestions.length == 0) {
+        loader(load)
         finished.classList.add("hide")
         showScore.classList.remove("hide")
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
+        loader()
     } else {
         let questionIndex = Math.floor(Math.random() * totalQuestions.length)
         currentQuestion = totalQuestions[questionIndex]
@@ -148,6 +153,7 @@ function newQuestion() {
         questions.splice(questionIndex, 1)
         acceptingInput = true
     }
+    loader()
     answerFormat()
 }
 
@@ -192,7 +198,10 @@ function answerFormat() {
     })
 }
 
-
+/**
+ * shows the loader on param & hides
+ * @param {shows the loading wheel} load 
+ */
 function loader(load){
     if (load) {
         loading.classList.remove("hide")
