@@ -91,7 +91,14 @@ In future i would also like to add a challenge mode which would mix genres and t
 
 ## Technology Used
 
-
+* HTML, CSS & JavaScript Programming Languages
+* [Bootstrap](https://getbootstrap.com/) - to help adapt for numerous input types
+* [Sweet Alert 2](https://sweetalert2.github.io/) - Popups for answer feedback 
+* [Google Fonts](https://fonts.google.com/) - 
+* [VSCode](https://code.visualstudio.com/) - IDE for local development
+* [GIT](https://git-scm.com/) - Version Control
+* [GitHub](https://github.com/) - to host the repositories for this project and the live 
+website preview
 
 ## Testing
 
