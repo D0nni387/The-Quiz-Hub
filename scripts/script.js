@@ -8,7 +8,7 @@ const quantChoice = document.getElementById("questionCount")
 const diffChoice = document.getElementById("difficultySelect")
 const showScore = document.getElementById("completedArea")
 const finalScore = document.getElementById("score")
-
+const dailyTrivia = document.getElementById("trivia")
 
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
@@ -20,6 +20,19 @@ let currentQuestion = {}
 
 let baseURL = ("https://opentdb.com/")
 let dataUrl = ""
+
+
+
+function trivia() {
+    fetch("https://uselessfacts.jsph.pl//random.json?language=en")
+    .then(response => {
+        return response.json()
+    })
+    .then(trivia => {
+        let bob = trivia.text
+        dailyTrivia.innerText = bob
+    })
+}
 
 /**
  * defines the request location to fetch data 
@@ -65,6 +78,7 @@ function categories() {
 }
 
 categories()
+trivia()
 
 
 /**
