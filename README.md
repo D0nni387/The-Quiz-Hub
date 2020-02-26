@@ -19,7 +19,19 @@ As the user is answering the presented questions, the current score against the 
 
 ## UX
 
+As the main aim of this site is to provide a casual, fun quiz environment the UX needs to be as stress free to use as possible with all options provided to the user in an easy to read and obvious format.
 
+The main expected user is a broad field but expected to fall into one of the below criteria
+
+1. A casual user
+2. Someone wanting a quiz time waster with little to invest
+3. Quiz enthusiast
+
+With regards to other sites online, this site ideally needs to be
+
+1. Easy to use
+2. Be quick and easy to start and complete
+3. Be able to restart and keep the user engaged consistently 
 
 ---
 
