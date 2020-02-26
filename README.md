@@ -127,7 +127,19 @@ To deploy this page to GitHub Pages from its [GitHub repository](https://d0nni38
 
 ### How to run this project locally
 
+To clone this project from GitHub:
 
+1. Under the repository name, click "Clone or download".
+2. In the Clone with HTTPs section, copy the clone URL for the repository. 
+3. In your local IDE open Git Bash.
+4. Change the current working directory to the location where you want the cloned directory to be made.
+5. Type ```git clone```, and then paste the URL you copied in Step 3.
+```console
+git clone https://github.com/D0nni387/The-Quiz-Hub.git
+```
+6. Press Enter. Your local clone will be created.
+
+Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).
 
 ---
 
