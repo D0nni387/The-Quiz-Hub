@@ -58,6 +58,19 @@ Mobile Here
 
 ## Features
 
+As the primary feature of the site is to provide a quiz application to the user it will allow the below options to expand the users experiance to their tastes
+
+### Select a topic
+
+The user is presented with an option to choose a topic of choice from all available topics helping to provide a more tailored game to the user
+
+### Select Difficulty
+
+For younger users or for people wanting a lesser or harder challenge the user is given the option to select a difficulty of questions from either Easy, Medium or Hard
+
+### Select Number Of Questions
+
+As people may want a longer game or shorter game the user is presented with the option to select the amount of questions the app will provide them.
 
 ---
 
