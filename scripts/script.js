@@ -55,13 +55,9 @@ function categories() {
                 categoryOption.classList.add("category")
                 document.getElementById("categoryList").appendChild(categoryOption)
             })
-            catId.addEventListener('click', defineCats = () => {
-    id = catChoice.options[catChoice.selectedIndex].id
-    diff = diffChoice.options[diffChoice.selectedIndex].id
-    quant = quantChoice.options[diffChoice.selectedIndex].id
-    start.classList.add("hide")
-    getQuiz()
-})
+            
+    
+
         })
         .catch(err => {
             console.error(err)
@@ -178,3 +174,10 @@ restartNew.addEventListener('click', restartNew = () => {
     categories()
 })
 
+catId.addEventListener('click', defineCats = () => {
+id = catChoice.options[catChoice.selectedIndex].id
+    diff = diffChoice.options[diffChoice.selectedIndex].id
+    quant = quantChoice.options[quantChoice.selectedIndex].id
+    start.classList.add("hide")
+    getQuiz()
+})
