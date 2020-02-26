@@ -23,7 +23,9 @@ let baseURL = ("https://opentdb.com/")
 let dataUrl = ""
 
 
-
+/**
+ * Retrieves Trivia data and passes to DOM
+ */
 function trivia() {
     fetch("https://uselessfacts.jsph.pl//random.json?language=en")
     .then(response => {
