@@ -38,11 +38,7 @@ body {
     align-content: center;
 }
 
-.select-area {
-    color: royalblue;
-    display: flex;
-    justify-content: center;
-}
+
 
 .answers {
     display: flex;
