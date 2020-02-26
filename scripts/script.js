@@ -21,6 +21,9 @@ let currentQuestion = {}
 let baseURL = ("https://opentdb.com/")
 let dataUrl = ""
 
+/**
+ * defines the request location to fetch data 
+ */
 function getData(chosen) {
     if (chosen) {
         dataUrl = (`${baseURL}api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
@@ -52,6 +55,13 @@ function categories() {
                 categoryOption.classList.add("category")
                 document.getElementById("categoryList").appendChild(categoryOption)
             })
+            catId.addEventListener('click', defineCats = () => {
+    id = catChoice.options[catChoice.selectedIndex].id
+    diff = diffChoice.options[diffChoice.selectedIndex].id
+    quant = quantChoice.options[diffChoice.selectedIndex].id
+    start.classList.add("hide")
+    getQuiz()
+})
         })
         .catch(err => {
             console.error(err)
@@ -60,10 +70,13 @@ function categories() {
 
 categories()
 
+
 /**
  * Retrieves Quiz Data, sorts the data and passes to the DOM
  */
 function getQuiz() {
+    
+    console.log(quant)
     loading.classList.remove("hide")
     getData(chosen)
     fetch(dataUrl)
@@ -138,10 +151,9 @@ function answerFormat() {
             let selection = event.target
             let selectedAnswer = selection.dataset["answer"]
 
-            let outcome = 'incorrect'
+          let outcome = 'incorrect'
             if (selectedAnswer == currentQuestion.answer) {
-                outcome = 'correct'
-                score++
+                outcome = 'correct'   
             }
             selection.parentElement.classList.add(outcome)
 
@@ -153,23 +165,16 @@ function answerFormat() {
     })
 }
 
-//unsure on how phrase these
+//unsure on how to place these!
 restartQuiz.addEventListener('click', restartSame = () => {
     showScore.classList.add("hide")
     getQuiz()
 })
 
-//Restart The Application
+
 restartNew.addEventListener('click', restartNew = () => {
     showScore.classList.add("hide")
     start.classList.remove("hide")
-    getCategories()
+    categories()
 })
 
-catId.addEventListener('click', defineCats = () => {
-    id = catChoice.options[catChoice.selectedIndex].id
-    diff = diffChoice.options[diffChoice.selectedIndex].id
-    quant = quantChoice.options[diffChoice.selectedIndex].id
-    start.classList.add("hide")
-    getQuiz()
-})
