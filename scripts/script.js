@@ -17,7 +17,7 @@ let answers = Array.from(document.getElementsByClassName("answer"))
 let finished = document.getElementById("questionArea")
 let questions = []; //sets blank array for API to populate
 let currentQuestion = {}
-
+let acceptingInput = false
 let baseURL = ("https://opentdb.com/")
 let dataUrl = ""
 
@@ -148,6 +148,7 @@ function newQuestion() {
         })
         totalQuestions.splice(questionIndex, 1)
         questions.splice(questionIndex, 1)
+        acceptingInput = true
     }
     answerFormat()
 }
@@ -158,19 +159,37 @@ function newQuestion() {
 function answerFormat() {
     answers.forEach(answer => {
         answer.addEventListener('click', event => {
+            if (!acceptingInput) return
+            acceptingInput = false
             let selection = event.target
             let selectedAnswer = selection.dataset["answer"]
 
-          let outcome = 'incorrect'
+          
             if (selectedAnswer == currentQuestion.answer) {
-                outcome = 'correct'   
+                
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: `You're right!`,
+                    showConfirmButton: false,
+                    timer: 2500
+                  })
+                  score ++
+            } else {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: `Sorry the correct answer was number ${currentQuestion.answer}!`,
+                    showConfirmButton: false,
+                    timer: 2500
+                  })
             }
-            selection.parentElement.classList.add(outcome)
+            
 
             setTimeout(() => {
-                selection.parentElement.classList.remove(outcome)
+                
                 newQuestion()
-            }, 2000)
+            }, 2500)
         })
     })
 }
