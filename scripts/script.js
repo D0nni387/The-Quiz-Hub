@@ -161,7 +161,7 @@ function newQuestion() {
 }
 
 /**
- * listens for answer selection and either 
+ * listens for answer selection and gives user the appropriate response
  */
 function answerFormat() {
     answers.forEach(answer => {
