@@ -14,12 +14,10 @@ let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
 let answers = Array.from(document.getElementsByClassName("answer"))
 let finished = document.getElementById("questionArea")
-let questions = []; //sets blank array for API to populate
-let currentQuestion = {}
-let acceptingInput = false
 let baseURL = "https://opentdb.com/"
-let dataUrl = ""
-
+let acceptingInput = false
+let questions = []
+let currentQuestion = {}
 
 /**
  * Retrieves Trivia data and passes to DOM
@@ -50,7 +48,7 @@ function getData(gameTrigger) {
  * Retreieves category list and passes to the DOM
  */
 function categories() {
-    loader(true)
+    loadingWheel(true)
     getData(false)
     fetch(dataUrl)
         .then(response => {
@@ -72,7 +70,7 @@ function categories() {
             })
             
     
-            loader()
+            loadingWheel()
             start.classList.remove("hide")
         })
         .catch(err => {
@@ -83,12 +81,11 @@ function categories() {
 categories()
 trivia()
 
-
 /**
  * Retrieves Quiz Data, sorts the data and passes to the DOM
  */
 function getQuiz() {
-    loader(true)
+    loadingWheel(true)
     getData(true)
     fetch(dataUrl)
         .then(data => {
@@ -200,7 +197,7 @@ function answerFormat() {
  * shows the loader on param & hides
  * @param {shows the loading wheel} load 
  */
-function loader(loading){
+function loadingWheel(loading){
     if (loading) {
         load.classList.remove("hide")
     } else{
