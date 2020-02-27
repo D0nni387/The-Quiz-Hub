@@ -75,6 +75,7 @@ function categories() {
             
     
             loader()
+            start.classList.remove("hide")
         })
         .catch(err => {
             console.error(err)
