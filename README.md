@@ -48,11 +48,22 @@ With regards to other sites online, this site ideally needs to be
 
 ## Wireframe Mockups:
 
-Desktop here 
+### Desktop
+<div style="text-align:center;">
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/wireframes/desktop%20quiz%20layout.png"></img><br>
+</div>
 
-Tablet Here
+### Tablet
 
-Mobile Here
+<div style="text-align:center;">
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/wireframes/tablet%20quiz%20layout.png"></img><br>
+</div>
+
+### Mobile
+
+<div style="text-align:center;">
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/wireframes/mobile%20quiz%20layout.png"></img>
+</div>
 
 ---
 
