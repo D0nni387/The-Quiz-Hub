@@ -12,25 +12,24 @@
 </head>
 
 <body>
-  <header class="container">
-    <div class="row header-format">
-      <div class="col-12">
-
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-12 ">
       </div>
-     <img src="assets/images/logo.png">
+      <img src="assets/images/logo.png" class="logo">
     </div>
   </header>
 
-  <section id="selectArea" class="container intro select-area">
+  <section id="selectArea" class="container-fluid intro select-area">
     <div id="loading" class="hide"></div>
-    <div  class="row">
+    <div class="row">
       <div class="col-sm-12 col-md-4">
         <h3>Select a topic</h3>
         <select id="categoryList">
 
         </select>
       </div>
-      <br>
+
 
       <div class="col-sm-12 col-md-4">
         <h3>Select Difficulty</h3>
@@ -52,14 +51,24 @@
         </select>
 
       </div>
+    </div>
+    <div class="row">
       <div class="col-12">
         <button class="submit" id="catSubmit">Let's Get Started!</button>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="trivia col-12"><p id="trivia"></p></div>
-  </div>
+
+
+    <!-- class="row">
+      <div class="col-4"><img src="assets/images/did-you-know.png">
+      </div>
+
+      <div class="trivia col-8">
+        <p id="trivia"></p>
+      </div>
+    </div>
+    -->
+    
   </section>
 
   <section id="questionArea" class="container question-area hide">
@@ -82,9 +91,9 @@
 
   <section id="completedArea" class="hide score-area container">
     <div class="score" id="score"></div>
-      <button id="restartSame">Play again?</button>
-      <button id="restartNew">Choose a different Quiz</button>
-    
+    <button id="restartSame">Play again?</button>
+    <button id="restartNew">Choose a different Quiz</button>
+
 
   </section>
 
@@ -95,4 +104,4 @@
   <script src="scripts/script.js"></script>
 </body>
 
-</html>   
+</html>
