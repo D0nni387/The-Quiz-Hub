@@ -32,8 +32,8 @@ function trivia() {
         return response.json()
     })
     .then(trivia => {
-        let bob = trivia.text
-        dailyTrivia.innerText = bob
+        let triviaText = trivia.text
+        dailyTrivia.innerText = triviaText
     })
 }
 
