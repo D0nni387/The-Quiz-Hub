@@ -20,9 +20,23 @@ body {
 
 .choices {
     
-        border-style: groove;
-        border-color: azure;
+    border-style: groove;
+    border-color: azure;
     
+}
+
+.submit {
+    margin-bottom: 3rem;
+}
+
+.trivia-section {
+    display: flex;
+    justify-content: center;
+}
+
+.trivia {
+    padding-top: 2rem;
+    font-weight: 300;
 }
 
 .trophy {
