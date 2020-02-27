@@ -6,32 +6,24 @@ body {
 }
 
 .header-format {
-    display: flex;
-    justify-content: center;    
+     
 }
 
 .logo {
-    color: royalblue;
-    border: #000;
-    font-size: 5rem;
-    text-align: center;
-    padding: 2rem 0rem;
+    align-content: center;
+    width: 50%
+    
 }
 
 .question {
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    
+   
     }
 
 .hide {
     display: none;
 }
 
-.answerarea {
-    display: flex;
-    justify-content: center;
-}
 
 
 .outcome {
@@ -41,8 +33,6 @@ body {
 
 
 .answers {
-    display: flex;
-    justify-content: center;
     cursor: pointer;
     background-color: #ffb366;
     margin: 1rem;
@@ -88,7 +78,8 @@ body {
   }
   
   .answer {
-      display: flex;
-      justify-content: center;
+      
       width: 100%;
   }
+
+  
