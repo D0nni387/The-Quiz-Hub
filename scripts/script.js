@@ -1,6 +1,6 @@
 const start = document.getElementById("selectArea")
 const catId = document.getElementById("catSubmit")
-const loading = document.getElementById("loading")
+const load = document.getElementById("loading")
 const catChoice = document.getElementById("categoryList")
 const started = document.getElementById("questionArea")
 const question = document.getElementById("question");
@@ -12,14 +12,12 @@ const dailyTrivia = document.getElementById("trivia")
 
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
-let chosen = true
-let load = true
 let answers = Array.from(document.getElementsByClassName("answer"))
 let finished = document.getElementById("questionArea")
 let questions = []; //sets blank array for API to populate
 let currentQuestion = {}
 let acceptingInput = false
-let baseURL = ("https://opentdb.com/")
+let baseURL = "https://opentdb.com/"
 let dataUrl = ""
 
 
@@ -40,8 +38,8 @@ function trivia() {
 /**
  * defines the request location to fetch data 
  */
-function getData(chosen) {
-    if (chosen) {
+function getData(gameTrigger) {
+    if (gameTrigger) {
         dataUrl = (`${baseURL}api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
     } else {
         dataUrl = (`${baseURL}api_category.php`)
@@ -52,8 +50,8 @@ function getData(chosen) {
  * Retreieves category list and passes to the DOM
  */
 function categories() {
-    loader(load)
-    getData()
+    loader(true)
+    getData(false)
     fetch(dataUrl)
         .then(response => {
             return response.json()
@@ -90,28 +88,25 @@ trivia()
  * Retrieves Quiz Data, sorts the data and passes to the DOM
  */
 function getQuiz() {
-    loader(load)
-    
-    getData(chosen)
+    loader(true)
+    getData(true)
     fetch(dataUrl)
         .then(data => {
-            return data.json() //converts received data to JSON
+            return data.json()
         })
         .then(loadedQuestions => {
             questions = loadedQuestions.results.map(loadedQuestion => {
                 const formatQuestion = {
                     question: loadedQuestion.question
                 }
-                //Populates answers array and randomises answer locations
                 formatQuestion.answer = Math.floor(Math.random() * 3) + 1
                 const answerChoices = [...loadedQuestion.incorrect_answers]
                 answerChoices.splice(
                     formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
-                ) //adds correct answer into the array
+                )
                 answerChoices.forEach((answer, index) => {
                     formatQuestion["choice" + (index + 1)] = answer
                 })
-
                 return formatQuestion
             })
             startGame()
@@ -205,11 +200,11 @@ function answerFormat() {
  * shows the loader on param & hides
  * @param {shows the loading wheel} load 
  */
-function loader(load){
-    if (load) {
-        loading.classList.remove("hide")
+function loader(loading){
+    if (loading) {
+        load.classList.remove("hide")
     } else{
-        loading.classList.add("hide")
+        load.classList.add("hide")
     }
 }
 
