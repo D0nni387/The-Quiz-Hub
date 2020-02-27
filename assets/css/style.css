@@ -93,6 +93,11 @@ body {
 
 /* Based on the loader lesson W3 Schools */
 
+.loader {
+    display: flex;
+    justify-content: center;
+}
+
 #loading {
     border: 16px solid #ffb366; /* Light grey */
     border-top: 16px solid #668cff; /* Blue */
