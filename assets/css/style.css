@@ -33,8 +33,7 @@ body {
 }
 
 .question {
-    
-   
+    text-align: center
 }
 
 .hide {
@@ -43,18 +42,21 @@ body {
 
 .answer {
     cursor: pointer;
-    background-color: #ffb366; 
+    background-color: #ffb366;
     width: 75%;
     height: 100%;
-    border-radius: 5px;
-    border-color: #000;
-    border-width: 2px;
-    border-style: solid;
+    border-radius: 10px;
+    border-width: 3px;
+    border-style: outset;
     padding-top: 5px;
+    text-align: center;
 }
 
 .answers {
+    display: flex;
+    justify-content: center;
     padding: 1rem;
+
 }
 
 .intro {

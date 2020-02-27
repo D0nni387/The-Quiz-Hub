@@ -20,81 +20,86 @@
     </div>
   </header>
 
-  <section id="selectArea" class="container intro">
-    <div id="loading" class="hide"></div>
-    <div class="row select-area">
-      <div class="col-sm-12 col-md-4">
-        <h3>Select a topic</h3>
-        <select id="categoryList">
-        </select>
-      </div>
-
-
-      <div class="col-sm-12 col-md-4">
-        <h3>Select Difficulty</h3>
-
-        <select id="difficultySelect">
-          <option id="easy">Easy</option>
-          <option id="medium">Medium</option>
-          <option id="hard">Hard</option>
-        </select>
-      </div>
-
-      <div class="col-sm-12 col-md-4">
-        <h3>How Many Questions?</h3>
-        <select id="questionCount">
-          <option id="10">10</option>
-          <option id="15">15</option>
-          <option id="20">20</option>
-          <option id="25">25</option>
-        </select>
-
-      </div>
-    </div>
+  <div class="container">
     <div class="row">
-      <div class="col-12">
-        <button class="submit" id="catSubmit">Let's Get Started!</button>
-      </div>
+      <div id="loading" class="hide"></div>
     </div>
 
+    <section id="selectArea" class="container intro hide">
 
-    <div class="row">
-      <div class="col-sm-12 col-md-4"><img src="assets/images/did-you-know.png">
-      </div>
-      <div class="col-sm-12 col-md-8 trivia">
-        <p id="trivia"></p>
-      </div>
-    </div>
+      <div class="row select-area">
+        <div class="col-sm-12 col-md-4 choices">
+          <h3>Select a topic</h3>
+          <select id="categoryList">
+          </select>
+        </div>
 
 
-  </section>
+        <div class="col-sm-12 col-md-4 choices">
+          <h3>Select Difficulty</h3>
 
-  <section id="questionArea" class="container question-area hide">
-    <h2 id="question" class="question select-area">This is the default text and you shouldn't see my shame!</h2>
-    <div class="row answerarea">
-      <div class="col-6 answers">
-        <p class="answer" data-answer="1">Default Answer 1</p>
-      </div>
-      <div class="col-6 answers">
-        <p class="answer" data-answer="2">Default Answer 2</p>
-      </div>
-      <div class="col-6 answers">
-        <p class="answer" data-answer="3">Default Answer 3</p>
-      </div>
-      <div class="col-6 answers">
-        <p class="answer" data-answer="4">Default Answer 4</p>
-      </div>
-    </div>
-  </section>
+          <select id="difficultySelect">
+            <option id="easy">Easy</option>
+            <option id="medium">Medium</option>
+            <option id="hard">Hard</option>
+          </select>
+        </div>
 
-  <section id="completedArea" class="score-area container">
-    <img src="assets/images/trophy.png" class="trophy">
-    <div class="row">
-      <div class="col-12 score" id="score"></div>
-    </div>
-    <button id="restartSame">Play again?</button>
+        <div class="col-sm-12 col-md-4 choices">
+          <h3>How Many Questions?</h3>
+          <select id="questionCount">
+            <option id="10">10</option>
+            <option id="15">15</option>
+            <option id="20">20</option>
+            <option id="25">25</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button class="submit" id="catSubmit">Let's Get Started!</button>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4"><img src="assets/images/did-you-know.png">
+        </div>
+        <div class="col-sm-12 col-md-8 trivia">
+          <p id="trivia"></p>
+        </div>
+      </div>
+
+
+    </section>
+
+    <section id="questionArea" class="container question-area hide">
+      <h2 id="question" class="question select-area">This is the default text and you shouldn't see my shame!</h2>
+      <div class="row answerarea">
+        <div class="col-sm-12 col-md-6 answers">
+          <p class="answer" data-answer="1">Default Answer 1</p>
+        </div>
+        <div class="col-sm-12 col-md-6 answers">
+          <p class="answer" data-answer="2">Default Answer 2</p>
+        </div>
+        <div class="col-sm-12 col-md-6 answers">
+          <p class="answer" data-answer="3">Default Answer 3</p>
+        </div>
+        <div class="col-sm-12 col-md-6 answers">
+          <p class="answer" data-answer="4">Default Answer 4</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="completedArea" class="score-area container hide">
+      <img src="assets/images/trophy.png" class="trophy">
+      <div class="row">
+        <div class="col-12 score" id="score"></div>
+      </div>
+      <button id="restartSame">Play again?</button>
       <button id="restartNew">Choose a different Quiz</button>
-    </div>
+  </div>
 
 
   </section>
