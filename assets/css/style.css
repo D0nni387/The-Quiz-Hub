@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
 
 body {
-    background-color: #cce6ff;
+    background-color: #2828fc;
     font-family: "Solway", sans-serif;
+    color: #D3D3D3;
+    font-size: 1.3rem;
 }
 
 .logo {
@@ -56,21 +58,36 @@ body {
 
 .answer {
     cursor: pointer;
-    background-color: #ffb366;
+    background-color: #e6a11c;
+    color: #000;
     width: 75%;
     height: 100%;
     border-radius: 10px;
     border-width: 3px;
-    border-style: outset;
+    border-style: solid;
+    border-color: #000;
     padding-top: 5px;
     text-align: center;
+    
 }
 
 .answers {
     display: flex;
     justify-content: center;
     padding: 1rem;
+}
 
+.answer-number {
+    background-color:#e6a11c;
+    color: #000;
+    border-radius: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000;
+    padding-top: 5px;
+    text-align: center;
+    padding: 0.5rem 1.3rem 0rem 1rem;
+    
 }
 
 .intro {
