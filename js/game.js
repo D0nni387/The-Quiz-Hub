@@ -129,7 +129,7 @@ function startGame() {
  * checks remaining questions and either ends the game if no questions left or gets next question
  */
 function newQuestion() {
-    loader(load)
+    loadingWheel(true)
     if (totalQuestions.length == 0) {
         loader(load)
         finished.classList.add("hide")
@@ -148,7 +148,7 @@ function newQuestion() {
         questions.splice(questionIndex, 1)
         acceptingInput = true
     }
-    loader()
+    loadingWheel(false)
     answerFormat()
 }
 
