@@ -147,15 +147,27 @@ website preview
 
 ## Testing
 
+As this was my first time developing a full project using JavaScript & external API data i ensure i was extremely thorough with testing to ensure that all functions ran correctly and data was provided to the DOM as expected without any issues. Taking this approach has helped increase my knowledge of JavaScript and best practice greatly.
+
 #### Test Planning
 
+As this project is the most complex thing i have worked on, i wanted to ensure that a methodical approach was taken with constant feature testing throughout development. In it's inital state i created dummy html items to ensure data was being passed and displayed correctly and as expected. In future projects i will look to using more automated testing to aid me in my development. 
+
 #### Testing Stories
+
+* Upon my initial completetion of JS features i was told that my colour pallet was too dull and "boring" which was against my intial plan for the project which led to me implimenting a new colour scheme.
+
+* In my initial coding stages i was using the classic XHR http request which i found to be quite cumbersome to develop with which led me to learn and use the newer fetch API method which i found much easier to use and sped up my progress greatly
+
+* When i was initially developing the confirmation of correct answer, i used css classes to clarify with either a red or green to indicate a correct or incorrect answer, speaking with users this was found to be fit for purpose but dull. At this point i made the decision to move to Sweet Alert to allow for a much more engaging feature for the user.
 
 ## Overall:
 
 ### Responsiveness -
+I decided to develop the site based around bootstrap as this is a utility i'm acustomed with and allowed me to make sure the site was responsive to all devices accessing the site. Using this grid system made laying out items quick and easy.
 
 ### Design -
+The main aim of my site was to use a simple but vivid colour pallet to help the site feel welcoming and also easy to use, to aid me in this i used bootstrap to help me style elements such as buttons and dropdowns. When chosing a colour pallet i used both [contrast-ration.com](https://contrast-ratio.com/) & [colorsafe.co](http://colorsafe.co/) to ensure my choices are easily to read and follow WCAG Guidelines
 
 ### Features -
 
