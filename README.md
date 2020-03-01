@@ -65,16 +65,16 @@ With regards to other sites online, this site ideally needs to be
 
 #### Fonts
 
-Due to the minimal approach to the design i decided to use a single font to allow the content to be consistent throughout, deciding on Solway provided through the google font service, i felt this offered the user a simple easy to read font allowing content to be easily read on all devices
+Due to the minimal approach to the design i decided to use a single font to allow the content to be consistent throughout, deciding on Solway provided through the google font service, i felt this offered the user a simple easy to read font allowing content to be easily read on all devices.
 
 #### Colours
 
-After discussing various colour combinations with potential users of this site, i decided upon the following fonts allowing for a vibrant colour pallet with good contract ratios 
+After discussing various colour combinations with potential users of this site, i decided upon the following fonts allowing for a vibrant colour pallet with good contract ratios.
 
 
 * Background color: #2828fc 
 * Logo & Content: #e6a11c 3.38 contrast score with a black outline allows the content to stand out easily.
-* Text and social icons: #d3d3d3 5.01 contrast score over background
+* Text and social icons: #d3d3d3 5.01 contrast score over background.
 * Text over answers: #000 a standard black text allows answers to be easily read.
  
 ---
@@ -106,7 +106,7 @@ As the primary feature of the site is to provide a quiz application to the user 
 
 ### Select a topic
 
-The user is presented with an option to choose a topic of choice from all available topics helping to provide a more tailored game to the user
+The user is presented with an option to choose a topic of choice from all available topics helping to provide a more tailored game to the user.
 
 ### Select Difficulty
 
@@ -122,7 +122,7 @@ When the user selects an answers the user is presented with a popup to give the 
 
 ### Full Playable Quiz To Users Choice
 
-With the implimentation of all of the above features, this allows the user to have a customised quiz to their choice
+With the implimentation of all of the above features, this allows the user to have a customised quiz to their choice.
 
 ---
 
@@ -232,12 +232,37 @@ This worked as expected, however the API chosen has proven to be unreliable as i
 
 
 ### Issues and resolutions
+During development of this project i encountered a number of bugs which stalled progress, below are examples of the larger bugs and the fixes.
 
+##### Bug:
+When sweet alert opened to show the result, it continued to iterate through the questions array
 
+##### Fix:
+To fix this i decided to make sure that when the user selected an answer it would stop accepting inputs until the next question was loaded, this was done by creating a boolean variable which toggled true and false.
+
+##### Result:
+This fixed the issue and allowed all questions to be produced as expected.
+
+##### Bug:
+When the user selected the amount of questions they wanted, it would always give 10 questions.
+
+##### Fix:
+This was due to the wrong id being reference causing the API to default to 10 questions, changing the variable to the correct id corrected this.
+##### Result:
+When this was changed the correct amount of questions were provided from the API.
+
+##### Bug
+On Apple and Samsung default browsers, the logo was being warped.
+
+##### Fix
+To fix this i found an error in my bootstrap html causing the logo element to sit outside of it's container.
+
+##### Result
+The logo in initial testing now scales correctly.
 
 ### Known Issues
 
-
+The only known issue at the moment is the Trivia API is down so the catch error is being produced to the DOM.
 
 ---
 
