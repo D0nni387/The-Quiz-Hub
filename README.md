@@ -43,7 +43,9 @@ With regards to other sites online, this site ideally needs to be
 
 1. Easy to use
 2. Be quick and easy to start and complete
-3. Be able to restart and keep the user engaged consistently 
+3. Be able to restart and keep the user engaged consistently
+4. Be updated with new content regularly 
+5. Visually appealing but not too harsh on the eye
 
 
 ### User stories
@@ -52,10 +54,13 @@ With regards to other sites online, this site ideally needs to be
 2. As a user i want to be able to choose what questions i'm given
 3. As a user i want to be able to select how hard the questions are so my kids could play it
 4. As a user i want to be challenged!
-5. As a user i want to be able to be questioned on all subjects at once.
+5. As a user i want to come back and know i'm getting new questions not the same quiz over and over.
 
 ### Designer goals 
 
+1. Create a simple but engaging quiz game
+2. Minimise continued maintanence with externally sourced quiz questions
+3. Be engaging enough to hold peoples attention to users coming back to the site after first use.
 
 ### Design Choices
 
