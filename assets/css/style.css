@@ -23,8 +23,7 @@ body {
 .choices {
     
     border-style: groove;
-    border-color: azure;
-    
+    border-color: #D3D3D3;
 }
 
 .submit {
@@ -123,8 +122,8 @@ body {
     border: 16px solid #ffb366; /* Light grey */
     border-top: 16px solid #668cff; /* Blue */
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 20rem;
+    height: 20rem;
     animation: spin 2s linear infinite;
   }
   
