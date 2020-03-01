@@ -1,26 +1,27 @@
+const questionCounter = document.getElementById("questionCount")
+const diffChoice = document.getElementById("difficultySelect")
+const quantChoice = document.getElementById("questionSelect")
+const showScore = document.getElementById("completedArea")
+const catChoice = document.getElementById("categoryList")
+const started = document.getElementById("questionArea")
+const dailyTrivia = document.getElementById("trivia")
+const question = document.getElementById("question")
+const dropItem = document.getElementById("category")
+const finalScore = document.getElementById("score")
 const start = document.getElementById("selectArea")
 const catId = document.getElementById("catSubmit")
 const load = document.getElementById("loading")
-const catChoice = document.getElementById("categoryList")
-const started = document.getElementById("questionArea")
-const question = document.getElementById("question");
-const quantChoice = document.getElementById("questionSelect")
-const diffChoice = document.getElementById("difficultySelect")
-const showScore = document.getElementById("completedArea")
-const finalScore = document.getElementById("score")
-const dailyTrivia = document.getElementById("trivia")
-const questionCounter = document.getElementById("questionCount")
-const dropItem = document.getElementById("category")
 
+let answers = Array.from(document.getElementsByClassName("answer"))
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
-let answers = Array.from(document.getElementsByClassName("answer"))
 let finished = document.getElementById("questionArea")
 let baseURL = "https://opentdb.com/"
 let acceptingInput = false
-let questions = []
 let currentQuestion = {}
-let questionCount = 0
+let questions = []
+
+
 
 /**
  * Retrieves Trivia data and passes to DOM

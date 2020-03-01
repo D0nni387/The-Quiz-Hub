@@ -1,127 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
 
+/* Global Rules */
 body {
     background-color: #2828fc;
     font-family: "Solway", sans-serif;
     font-size: 1.3rem;
-    
-}
-
-.font-color-main {
-    color: #D3D3D3;
-}
-
-.logo {
-    align-content: center;
-    width: 75%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 1rem;
-}
-
-#questionCount {
-    padding-top: .5rem;
-    text-align: center;
-}
-
-.select-area {
-    padding: 1.5rem 0rem 3rem 0rem;
-}
-
-.choices {
-
-    border-style: groove;
-    border-color: #D3D3D3;
-    padding-bottom: .5rem;
-}
-
-.submit {
-    margin-bottom: 3rem;
-}
-
-.trivia-section {
-    display: flex;
-    justify-content: center;
-}
-
-.trivia {
-    padding-top: 2rem;
-    font-weight: 300;
-}
-
-.trophy {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3rem 0;
-    font-size: 20rem;
-    color: #e6a11c;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: #000;
-}
-
-.question {
-    text-align: center
 }
 
 .hide {
     display: none;
 }
 
-.answer {
-    cursor: pointer;
-    background-color: #e6a11c;
+/* Button Behavior */
+
+.btn-theme {
+    font-size: 1.3rem;
     color: #000;
-    width: 75%;
-    height: 100%;
-    border-radius: 10px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #000;
-    padding-top: 5px;
-    text-align: center;
-
-}
-
-.answers {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.answer-number {
     background-color: #e6a11c;
+    border-color: #000
+}
+
+.btn-theme:hover {
+    background-color: #D3D3D3;
     color: #000;
-    border-radius: 10px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #000;
-    padding-top: 5px;
-    text-align: center;
-    padding: 0.5rem 1.3rem 0rem 1.3rem;
-
 }
 
-.intro {
-    align-content: center;
-    text-align: center;
-}
-
-.score-area {
-    align-content: center;
-    text-align: center;
-}
-
-.correct {
-    background-color: green;
-}
-
-.incorrect {
-    background-color: red;
-}
-
-/* Based on the loader lesson W3 Schools */
+/* Loader styling based on loader lesson from W3 Schools */
 
 .loader {
     display: flex;
@@ -147,15 +51,133 @@ body {
     }
 }
 
-select {
+/* Global Font Color */
+.font-color-main {
+    color: #D3D3D3;
+}
+
+/* Logo */
+.logo {
+    align-content: center;
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+}
+
+/* Select Area */
+
+.select-area {
+    padding: 1.5rem 0rem 3rem 0rem;
+}
+
+.choices {
+    border-style: groove;
+    border-color: #D3D3D3;
+    padding-bottom: .5rem;
+}
+
+.submit {
+    margin-bottom: 3rem;
+}
+
+.trivia-section {
+    display: flex;
+    justify-content: center;
+}
+
+.trivia {
+    padding-top: 2rem;
+    font-weight: 300;
+}
+
+#questionCount {
+    padding-top: .5rem;
+    text-align: center;
+}
+
+.custom-select {
+    background-color: #e6a11c;
+    color: #000;
+    border-color: #000;
     max-width: 75%;
 }
 
-footer {display: flex;
-    justify-content: center;}
+.intro {
+    align-content: center;
+    text-align: center;
+}
+
+
+/* Question Area */
+
+
+
+.question {
+    text-align: center
+}
+
+
+.answer {
+    cursor: pointer;
+    background-color: #e6a11c;
+    color: #000;
+    width: 75%;
+    height: 100%;
+    border-radius: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.answers {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.answer-number {
+    background-color: #e6a11c;
+    color: #000;
+    border-radius: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000;
+    padding-top: 5px;
+    text-align: center;
+    padding: 0.5rem 1.3rem 0rem 1.3rem;
+
+}
+
+/* Results Area */
+
+.score-area {
+    align-content: center;
+    text-align: center;
+}
+
+.trophy {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 0;
+    font-size: 20rem;
+    color: #e6a11c;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #000;
+}
+
+/*Social Media Icons */
+
+footer {
+    display: flex;
+    justify-content: center;
+}
 
 .smicon {
-    
     font-size: 6rem;
     color: #D3D3D3;
     padding: 1rem
@@ -166,20 +188,7 @@ footer {display: flex;
     transition-duration: 1s;
 }
 
-.btn-theme {
-    font-size: 1.3rem;
-    color: #000;
-    background-color: #e6a11c;
-    border-color: #000
-}
 
-.btn-theme:hover {
-    background-color: #D3D3D3;
-    color: #000;
-}
 
-.custom-select {
-    background-color: #e6a11c;
-    color: #000;
-    border-color: #000;
-}
+
+
