@@ -1,7 +1,25 @@
 # The Quiz Hub
 
 ---
+## Contents
 
+* UX
+    * Project Goals
+    * User Stories
+    * Designer Goals
+        * Fonts
+        * Colours
+        * Styling
+        * Images
+* Wireframes
+* Features
+* Future Goals
+* Technology Used
+* Testing
+* Known Bugs
+* Deployment
+* Credits
+* Acknowledgements
 
 
 ## Aim of the site
@@ -35,7 +53,7 @@ With regards to other sites online, this site ideally needs to be
 
 ---
 
-## Client stories
+## User stories
 
 1. As a user i want the site to be easy to use with a colourful and welcoming inferface.
 2. As a user i want to be able to choose what questions i'm given
