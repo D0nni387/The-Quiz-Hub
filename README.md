@@ -1,12 +1,14 @@
 # The Quiz Hub
 
 ---
-## Contents
+## Contents:
 
 * UX
     * Project Goals
+    * User Goals
     * User Stories
     * Designer Goals
+    * Design Choices
         * Fonts
         * Colours
         * Styling
@@ -16,28 +18,20 @@
 * Future Goals
 * Technology Used
 * Testing
+    * Issues and Resolutions
 * Known Bugs
 * Deployment
 * Credits
 * Acknowledgements
 
 
-## Aim of the site
+## UX (User Experience)
 
-The aim of The Quiz Hub is to provide a fun easy to use web based quiz game.
-The game will allow the user to choose a genre of questions and the amount of questions they want to be tested on.
+### Project Goals
 
-Each question will be presented individually to the user with 4 potential options to choose from.
+The goal of this project is to create a simple and user friendly quiz game sourcing data from a trivia API to allow for a new constant feed of new questions across various categories whilst removing the requirement to program new questions to keep this up to date. This will give users a reason to come back and keep playing when they have completed the quiz.
 
-The trivia will be pulled from (insert name of site here) api pulled through and upon selection presented to the user.
-
-As the user is answering the presented questions, the current score against the total amount of selected questions will be given to the user and at the conclusion a total provided of correct answers.
-
----
-
-## UX
-
-As the main aim of this site is to provide a casual, fun quiz environment the UX needs to be as stress free to use as possible with all options provided to the user in an easy to read and obvious format.
+### User goals
 
 The main expected user is a broad field but expected to fall into one of the below criteria
 
@@ -51,9 +45,8 @@ With regards to other sites online, this site ideally needs to be
 2. Be quick and easy to start and complete
 3. Be able to restart and keep the user engaged consistently 
 
----
 
-## User stories
+### User stories
 
 1. As a user i want the site to be easy to use with a colourful and welcoming inferface.
 2. As a user i want to be able to choose what questions i'm given
@@ -61,6 +54,18 @@ With regards to other sites online, this site ideally needs to be
 4. As a user i want to be challenged!
 5. As a user i want to be able to be questioned on all subjects at once.
 
+### Designer goals 
+
+
+### Design Choices
+
+#### Fonts
+
+#### Colours
+
+#### Styling
+
+#### Images
 
 ---
 
