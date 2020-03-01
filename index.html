@@ -26,94 +26,95 @@
     <div class="row loader">
       <div id="loading" class="hide"></div>
     </div>
-
-    <!--Quiz Selection-->
-    <section id="selectArea" class="container intro hide font-color-main">
-
-      <div class="row select-area">
-        <div class="col-sm-12 col-md-4 choices">
-          <h3>Select a topic</h3>
-          <select id="categoryList">
-          </select>
-        </div>
-        <div class="col-sm-12 col-md-4 choices">
-          <h3>Select Difficulty</h3>
-
-          <select id="difficultySelect">
-            <option id="easy">Easy</option>
-            <option id="medium">Medium</option>
-            <option id="hard">Hard</option>
-          </select>
-        </div>
-
-        <div class="col-sm-12 col-md-4 choices">
-          <h3>How Many Questions?</h3>
-          <select id="questionSelect">
-            <option id="10">10</option>
-            <option id="15">15</option>
-            <option id="20">20</option>
-            <option id="25">25</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <a class="btn btn-theme submit" href="#" id="catSubmit" aria-label="Let's get started!">Lets get started!</a>
-        </div>
-      </div>
-
-      <!-- Random Trivia-->
-      <div class="row trivia-section">
-        <div class="col-sm-12 col-md-4"><img src="assets/images/did-you-know.png">
-        </div>
-        <div class="col-sm-12 col-md-8 trivia">
-          <p id="trivia"></p>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Question area-->
-    <section id="questionArea" class="container question-area hide">
-      <h4 id="questionCount" class="font-color-main"></h4>
-      <h2 id="question" class="question select-area font-color-main">This is the default text and you shouldn't see my shame!</h2>
-      <div class="row answerarea">
-        <div class="col-sm-12 col-md-6 answers">
-          <span class="answer-number">1</span>
-          <a class="btn btn-theme answer" data-answer="1"></a>
-          
-        </div>
-        <div class="col-sm-12 col-md-6 answers">
-          <span class="answer-number">2</span>
-          <a class="btn btn-theme answer" data-answer="2"></a>
-        </div>
-        <div class="col-sm-12 col-md-6 answers">
-          <span class="answer-number">3</span>
-          <a class="btn btn-theme answer" data-answer="3"></a>
-        </div>
-        <div class="col-sm-12 col-md-6 answers">
-          <span class="answer-number">4</span>
-          <a class="btn btn-theme answer" data-answer="4"></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- End Game Area-->
-    <section id="completedArea" class="container hide score-area">
-      <i class="fas fa-trophy trophy"></i>
-      <div class="row">
-        <div class="col-12 score font-color-main" id="score"></div>
-      </div>
-      <a class="btn btn-theme submit" href="#" id="restartSame" aria-label="Play again">Play again?</a>
-      <a class="btn btn-theme submit" href="#" id="restartNew" aria-label="Choose a different quiz">Choose a different quiz</a>
   </div>
+
+  <!--Quiz Selection-->
+  <section id="selectArea" class="container intro hide font-color-main">
+    <div class="row select-area">
+      <div class="col-sm-12 col-md-4 choices">
+        <h3>Select a topic</h3>
+        <select id="categoryList" class="custom-select">
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-4 choices">
+        <h3>Select Difficulty</h3>
+        <select id="difficultySelect" class="custom-select">
+          <option id="easy">Easy</option>
+          <option id="medium">Medium</option>
+          <option id="hard">Hard</option>
+        </select>
+      </div>
+
+      <div class="col-sm-12 col-md-4 choices">
+        <h3>How Many Questions?</h3>
+        <select id="questionSelect" class="custom-select">
+          <option id="10">10</option>
+          <option id="15">15</option>
+          <option id="20">20</option>
+          <option id="25">25</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <a class="btn btn-theme submit" href="#" id="catSubmit" aria-label="Let's get started!">Lets get started!</a>
+      </div>
+    </div>
+
+    <!-- Random Trivia-->
+    <div class="row trivia-section">
+      <div class="col-sm-12 col-md-4"><img src="assets/images/did-you-know.png">
+      </div>
+      <div class="col-sm-12 col-md-8 trivia">
+        <p id="trivia"></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Question area-->
+  <section id="questionArea" class="container question-area hide">
+    <h4 id="questionCount" class="font-color-main"></h4>
+    <h2 id="question" class="question select-area font-color-main">This is the default text and you shouldn't see my
+      shame!</h2>
+    <div class="row answerarea">
+      <div class="col-sm-12 col-md-6 answers">
+        <span class="answer-number">1</span>
+        <a class="btn btn-theme answer" data-answer="1"></a>
+
+      </div>
+      <div class="col-sm-12 col-md-6 answers">
+        <span class="answer-number">2</span>
+        <a class="btn btn-theme answer" data-answer="2"></a>
+      </div>
+      <div class="col-sm-12 col-md-6 answers">
+        <span class="answer-number">3</span>
+        <a class="btn btn-theme answer" data-answer="3"></a>
+      </div>
+      <div class="col-sm-12 col-md-6 answers">
+        <span class="answer-number">4</span>
+        <a class="btn btn-theme answer" data-answer="4"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Game Area-->
+  <section id="completedArea" class="container hide score-area">
+    <i class="fas fa-trophy trophy"></i>
+    <div class="row">
+      <div class="col-12 score font-color-main" id="score"></div>
+    </div>
+    <a class="btn btn-theme submit" href="#" id="restartSame" aria-label="Play again">Play again?</a>
+    <a class="btn btn-theme submit" href="#" id="restartNew" aria-label="Choose a different quiz">Choose a different
+      quiz</a>
+
   </section>
   <footer class="container">
     <div class="row">
-    <a href="https://github.com/D0nni387/The-Quiz-Hub" target="_blank"><i class="fab fa-github smicon"></i></a>
-    <a href="#"><i class="fab fa-twitter smicon"></i></a>
-  </div>
+      <a href="https://github.com/D0nni387/The-Quiz-Hub" target="_blank"><i class="fab fa-github smicon"></i></a>
+      <a href="#"><i class="fab fa-twitter smicon"></i></a>
+    </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>

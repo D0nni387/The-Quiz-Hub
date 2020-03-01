@@ -10,6 +10,7 @@ const showScore = document.getElementById("completedArea")
 const finalScore = document.getElementById("score")
 const dailyTrivia = document.getElementById("trivia")
 const questionCounter = document.getElementById("questionCount")
+const dropItem = document.getElementById("category")
 
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
@@ -33,7 +34,7 @@ function trivia() {
     })
     .catch(() => {
         dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!"
-        console.error(err)
+        console.error()
     })
 }
 
@@ -65,17 +66,17 @@ function categories() {
                 let categoryOption = document.createElement("option")
                 let categoryName = document.createElement("p")
                 let name = document.createTextNode(category.name)
-
+            
                 categoryName.appendChild(name)
                 categoryOption.appendChild(categoryName)
                 categoryOption.id = category.id
                 categoryOption.classList.add("category")
-                document.getElementById("categoryList").appendChild(categoryOption)
+                document.getElementById("categoryList").appendChild(categoryOption)   
             })
             loadingWheel(false)
             start.classList.remove("hide")
         })
-        .catch(() => console.error(err))
+        .catch(() => console.error())
 }
 
 categories()

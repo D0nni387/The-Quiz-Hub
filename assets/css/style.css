@@ -33,6 +33,7 @@ body {
 
     border-style: groove;
     border-color: #D3D3D3;
+    padding-bottom: .5rem;
 }
 
 .submit {
@@ -175,4 +176,10 @@ footer {display: flex;
 .btn-theme:hover {
     background-color: #D3D3D3;
     color: #000;
+}
+
+.custom-select {
+    background-color: #e6a11c;
+    color: #000;
+    border-color: #000;
 }
