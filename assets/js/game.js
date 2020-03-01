@@ -4,11 +4,12 @@ const load = document.getElementById("loading")
 const catChoice = document.getElementById("categoryList")
 const started = document.getElementById("questionArea")
 const question = document.getElementById("question");
-const quantChoice = document.getElementById("questionCount")
+const quantChoice = document.getElementById("questionSelect")
 const diffChoice = document.getElementById("difficultySelect")
 const showScore = document.getElementById("completedArea")
 const finalScore = document.getElementById("score")
 const dailyTrivia = document.getElementById("trivia")
+const questionCounter = document.getElementById("questionCount")
 
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
@@ -18,6 +19,7 @@ let baseURL = "https://opentdb.com/"
 let acceptingInput = false
 let questions = []
 let currentQuestion = {}
+let questionCount = 0
 
 /**
  * Retrieves Trivia data and passes to DOM
@@ -114,6 +116,7 @@ function getQuiz() {
 function startGame() {
     totalQuestions = [...questions]
     score = 0
+    questionCount = 0
     newQuestion()
     started.classList.remove("hide")
 }
@@ -131,6 +134,8 @@ function newQuestion() {
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
         loadingWheel(false)
     } else {
+        questionCount ++
+        questionCounter.innerText = (`Question:${questionCount}/${quant}`)
         let questionIndex = Math.floor(Math.random() * totalQuestions.length)
         currentQuestion = totalQuestions[questionIndex]
         question.innerHTML = currentQuestion.question
