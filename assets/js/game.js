@@ -211,18 +211,18 @@ function loadingWheel(loading){
     }
 }
 
-restartQuiz.addEventListener('click', restartSame = () => {
+restartQuiz.addEventListener('click', () => {
     showScore.classList.add("hide")
     getQuiz()
 })
 
 
-restartNew.addEventListener('click', restartNew = () => {
+restartNew.addEventListener('click', () => {
     showScore.classList.add("hide")
     start.classList.remove("hide")
 })
 
-catId.addEventListener('click', defineCats = () => {
+catId.addEventListener('click', () => {
 id = catChoice.options[catChoice.selectedIndex].id
     diff = diffChoice.options[diffChoice.selectedIndex].id
     quant = quantChoice.options[quantChoice.selectedIndex].id
