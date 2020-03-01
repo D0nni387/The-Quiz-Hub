@@ -46,6 +46,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 3rem 0;
+    font-size: 20rem;
+    color: #e6a11c;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #000;
 }
 
 .question {
