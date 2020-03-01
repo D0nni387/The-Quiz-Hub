@@ -3,8 +3,12 @@
 body {
     background-color: #2828fc;
     font-family: "Solway", sans-serif;
-    color: #D3D3D3;
     font-size: 1.3rem;
+    
+}
+
+.font-color-main {
+    color: #D3D3D3;
 }
 
 .logo {
@@ -124,7 +128,7 @@ body {
 }
 
 #loading {
-    border: 16px solid #ffb366;
+    border: 16px solid #e6a11c;
     border-top: 16px solid #D3D3D3;
     border-radius: 50%;
     width: 20rem;
@@ -159,4 +163,16 @@ footer {display: flex;
 .smicon:hover {
     color: #e6a11c;
     transition-duration: 1s;
+}
+
+.btn-theme {
+    font-size: 1.3rem;
+    color: #000;
+    background-color: #e6a11c;
+    border-color: #000
+}
+
+.btn-theme:hover {
+    background-color: #D3D3D3;
+    color: #000;
 }

@@ -28,7 +28,7 @@
     </div>
 
     <!--Quiz Selection-->
-    <section id="selectArea" class="container intro hide">
+    <section id="selectArea" class="container intro hide font-color-main">
 
       <div class="row select-area">
         <div class="col-sm-12 col-md-4 choices">
@@ -59,7 +59,7 @@
 
       <div class="row">
         <div class="col-12">
-          <button class="submit" id="catSubmit">Let's Get Started!</button>
+          <a class="btn btn-theme submit" href="#" id="catSubmit" aria-label="Let's get started!">Lets get started!</a>
         </div>
       </div>
 
@@ -76,24 +76,25 @@
 
     <!-- Question area-->
     <section id="questionArea" class="container question-area hide">
-      <h4 id="questionCount"></h4>
-      <h2 id="question" class="question select-area">This is the default text and you shouldn't see my shame!</h2>
+      <h4 id="questionCount" class="font-color-main"></h4>
+      <h2 id="question" class="question select-area font-color-main">This is the default text and you shouldn't see my shame!</h2>
       <div class="row answerarea">
         <div class="col-sm-12 col-md-6 answers">
           <span class="answer-number">1</span>
-          <p class="answer" data-answer="1">Default Answer 1</p>
+          <a class="btn btn-theme answer" data-answer="1"></a>
+          
         </div>
         <div class="col-sm-12 col-md-6 answers">
           <span class="answer-number">2</span>
-          <p class="answer" data-answer="2">Default Answer 2</p>
+          <a class="btn btn-theme answer" data-answer="2"></a>
         </div>
         <div class="col-sm-12 col-md-6 answers">
           <span class="answer-number">3</span>
-          <p class="answer" data-answer="3">Default Answer 3</p>
+          <a class="btn btn-theme answer" data-answer="3"></a>
         </div>
         <div class="col-sm-12 col-md-6 answers">
           <span class="answer-number">4</span>
-          <p class="answer" data-answer="4">Default Answer 4</p>
+          <a class="btn btn-theme answer" data-answer="4"></a>
         </div>
       </div>
     </section>
@@ -102,10 +103,10 @@
     <section id="completedArea" class="container hide score-area">
       <i class="fas fa-trophy trophy"></i>
       <div class="row">
-        <div class="col-12 score" id="score"></div>
+        <div class="col-12 score font-color-main" id="score"></div>
       </div>
-      <button id="restartSame">Play again?</button>
-      <button id="restartNew">Choose a different Quiz</button>
+      <a class="btn btn-theme submit" href="#" id="restartSame" aria-label="Play again">Play again?</a>
+      <a class="btn btn-theme submit" href="#" id="restartNew" aria-label="Choose a different quiz">Choose a different quiz</a>
   </div>
   </section>
   <footer class="container">
