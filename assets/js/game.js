@@ -24,14 +24,12 @@ let currentQuestion = {}
  */
 function trivia() {
     fetch("https://uselessfacts.jsph.pl//random.json?language=en")
-    .then(response => {
-        return response.json()
-    })
+    .then(response => response.json())
     .then(trivia => {
         let triviaText = trivia.text
         dailyTrivia.innerText = triviaText
     })
-    .catch(err => {
+    .catch(() => {
         dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!"
         console.error(err)
     })
@@ -57,12 +55,10 @@ function categories() {
     loadingWheel(true)
     getData(false)
     fetch(dataUrl)
-        .then(response => {
-            return response.json()
-        })
+        .then(response => response.json())
         .then(category => {
             let categoryList = category.trivia_categories;
-            categoryList.forEach(function (category) {
+            categoryList.forEach(category => {
 
                 let categoryOption = document.createElement("option")
                 let categoryName = document.createElement("p")
@@ -74,14 +70,10 @@ function categories() {
                 categoryOption.classList.add("category")
                 document.getElementById("categoryList").appendChild(categoryOption)
             })
-            
-    
             loadingWheel(false)
             start.classList.remove("hide")
         })
-        .catch(err => {
-            console.error(err)
-        })
+        .catch(() => console.error(err))
 }
 
 categories()
@@ -94,9 +86,7 @@ function getQuiz() {
     loadingWheel(true)
     getData(true)
     fetch(dataUrl)
-        .then(data => {
-            return data.json()
-        })
+        .then(data => data.json())
         .then(loadedQuestions => {
             questions = loadedQuestions.results.map(loadedQuestion => {
                 const formatQuestion = {
@@ -115,9 +105,7 @@ function getQuiz() {
             startGame()
             loadingWheel(false)
         })
-        .catch(err => {
-            console.error(err)
-        })
+        .catch(() => console.error(err))
 }
 
 /**
@@ -163,7 +151,7 @@ function newQuestion() {
  */
 function answerFormat() {
     answers.forEach(answer => {
-        answer.addEventListener('click', event => {
+        answer.addEventListener('click', () => {
             if (!acceptingInput) return
             acceptingInput = false
             let selection = event.target
