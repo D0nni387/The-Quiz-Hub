@@ -34,8 +34,10 @@ function trivia() {
 }
 
 /**
- * defines the request location to fetch data 
+ * Gets API Data 
+ * @param {Boolean} - gameTrigger True value returns chosen quiz data  
  */
+
 function getData(gameTrigger) {
     if (gameTrigger) {
         dataUrl = (`${baseURL}api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
@@ -70,7 +72,7 @@ function categories() {
             })
             
     
-            loadingWheel()
+            loadingWheel(false)
             start.classList.remove("hide")
         })
         .catch(err => {
@@ -107,7 +109,7 @@ function getQuiz() {
                 return formatQuestion
             })
             startGame()
-            loader()
+            loadingWheel(false)
         })
         .catch(err => {
             console.error(err)
@@ -131,11 +133,11 @@ function startGame() {
 function newQuestion() {
     loadingWheel(true)
     if (totalQuestions.length == 0) {
-        loader(load)
+        loadingWheel(true)
         finished.classList.add("hide")
         showScore.classList.remove("hide")
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
-        loader()
+        loadingWheel(false)
     } else {
         let questionIndex = Math.floor(Math.random() * totalQuestions.length)
         currentQuestion = totalQuestions[questionIndex]
@@ -215,7 +217,6 @@ restartQuiz.addEventListener('click', restartSame = () => {
 restartNew.addEventListener('click', restartNew = () => {
     showScore.classList.add("hide")
     start.classList.remove("hide")
-    categories()
 })
 
 catId.addEventListener('click', defineCats = () => {
