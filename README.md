@@ -1,5 +1,7 @@
 # The Quiz Hub
-
+<div style="text-align:center;">
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/assets/images/the-quiz-hub-preview.png"></img><br>
+</div>
 ---
 ## Contents:
 
@@ -228,8 +230,6 @@ As i had already completed work on my quiz, i used the same methods to fetch the
 ##### Result:
 This worked as expected, however the API chosen has proven to be unreliable as it's down frequently.
 ---
-
-
 
 ### Issues and resolutions
 During development of this project i encountered a number of bugs which stalled progress, below are examples of the larger bugs and the fixes.
