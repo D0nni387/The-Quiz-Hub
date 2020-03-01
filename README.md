@@ -10,9 +10,7 @@
     * Designer Goals
     * Design Choices
         * Fonts
-        * Colours
-        * Styling
-        * Images
+        * Colours       
 * Wireframes
 * Features
 * Future Goals
@@ -73,10 +71,10 @@ Due to the minimal approach to the design i decided to use a single font to allo
 After discussing various colour combinations with potential users of this site, i decided upon the following fonts allowing for a vibrant colour pallet with good contract ratios 
 
 
-Background color: #2828fc 
-Logo & Content: #e6a11c 3.38 contrast score with a black outline allows the content to stand out easily.
-Text and social icons: #d3d3d3 5.01 contrast score over background
-Text over answers: #000 a standard black text allows answers to be easily read.
+* Background color: #2828fc 
+* Logo & Content: #e6a11c 3.38 contrast score with a black outline allows the content to stand out easily.
+* Text and social icons: #d3d3d3 5.01 contrast score over background
+* Text over answers: #000 a standard black text allows answers to be easily read.
  
 ---
 
@@ -149,6 +147,17 @@ website preview
 
 ## Testing
 
+#### Test Planning
+
+#### Testing Stories
+
+## Overall:
+
+### Responsiveness -
+
+### Design -
+
+### Features -
 
 
 ### Issues and resolutions
