@@ -66,12 +66,18 @@ With regards to other sites online, this site ideally needs to be
 
 #### Fonts
 
+Due to the minimal approach to the design i decided to use a single font to allow the content to be consistent throughout, deciding on Solway provided through the google font service, i felt this offered the user a simple easy to read font allowing content to be easily read on all devices
+
 #### Colours
 
-#### Styling
+After discussing various colour combinations with potential users of this site, i decided upon the following fonts allowing for a vibrant colour pallet with good contract ratios 
 
-#### Images
 
+Background color: #2828fc 
+Logo & Content: #e6a11c 3.38 contrast score with a black outline allows the content to stand out easily.
+Text and social icons: #d3d3d3 5.01 contrast score over background
+Text over answers: #000 a standard black text allows answers to be easily read.
+ 
 ---
 
 ## Wireframe Mockups:
@@ -130,7 +136,9 @@ In future i would also like to add a challenge mode which would mix genres and t
 
 ## Technology Used
 
-* HTML, CSS & JavaScript Programming Languages
+* HTML 
+* CSS 
+* JavaScript 
 * [Bootstrap](https://getbootstrap.com/) - to help adapt for numerous input types
 * [Sweet Alert 2](https://sweetalert2.github.io/) - Popups for answer feedback 
 * [Google Fonts](https://fonts.google.com/) - 
