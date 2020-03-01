@@ -22,6 +22,7 @@
 * Credits
 * Acknowledgements
 
+---
 
 ## UX (User Experience)
 
@@ -101,7 +102,7 @@ After discussing various colour combinations with potential users of this site, 
 
 ## Features
 
-As the primary feature of the site is to provide a quiz application to the user it will allow the below options to expand the users experiance to their tastes
+As the primary feature of the site is to provide a quiz application to the user it will allow the below options to expand the users experiance to their tastes.
 
 ### Select a topic
 
@@ -109,11 +110,19 @@ The user is presented with an option to choose a topic of choice from all availa
 
 ### Select Difficulty
 
-For younger users or for people wanting a lesser or harder challenge the user is given the option to select a difficulty of questions from either Easy, Medium or Hard
+For younger users or for people wanting a lesser or harder challenge the user is given the option to select a difficulty of questions from either Easy, Medium or Hard.
 
 ### Select Number Of Questions
 
 As people may want a longer game or shorter game the user is presented with the option to select the amount of questions the app will provide them.
+
+### Sweet Alert
+
+When the user selects an answers the user is presented with a popup to give the outcome of their answer, this was initially handled through CSS classes however Sweet Alert offered a much better experience for the user.
+
+### Full Playable Quiz To Users Choice
+
+With the implimentation of all of the above features, this allows the user to have a customised quiz to their choice
 
 ---
 
@@ -145,6 +154,8 @@ In future i would also like to add a challenge mode which would mix genres and t
 * [GitHub](https://github.com/) - to host the repositories for this project and the live 
 website preview
 
+---
+
 ## Testing
 
 As this was my first time developing a full project using JavaScript & external API data i ensure i was extremely thorough with testing to ensure that all functions ran correctly and data was provided to the DOM as expected without any issues. Taking this approach has helped increase my knowledge of JavaScript and best practice greatly.
@@ -161,6 +172,8 @@ As this project is the most complex thing i have worked on, i wanted to ensure t
 
 * When i was initially developing the confirmation of correct answer, i used css classes to clarify with either a red or green to indicate a correct or incorrect answer, speaking with users this was found to be fit for purpose but dull. At this point i made the decision to move to Sweet Alert to allow for a much more engaging feature for the user.
 
+---
+
 ## Overall:
 
 ### Responsiveness -
@@ -170,6 +183,52 @@ I decided to develop the site based around bootstrap as this is a utility i'm ac
 The main aim of my site was to use a simple but vivid colour pallet to help the site feel welcoming and also easy to use, to aid me in this i used bootstrap to help me style elements such as buttons and dropdowns. When chosing a colour pallet i used both [contrast-ration.com](https://contrast-ratio.com/) & [colorsafe.co](http://colorsafe.co/) to ensure my choices are easily to read and follow WCAG Guidelines
 
 ### Features -
+
+#### Self Populating Category List
+
+##### Plan: 
+During my intial development of this project i found an API i wanted to use which provided a wide variety of categorys to choose from, as this could change if content creators added new categories, i wanted this to be self populating from the API.
+
+##### Implementation:
+When researching the API documentation, i found the site offered their categories list as a seperate API. When loading the site, i used the fetch API to obtain this list which is then sorted and passed across to the DOM.
+
+##### Result:
+The categories list drop down operates as expected, populating the API data to the DOM allowing the user to select a required category which then influences the Quiz data pulled from the API.
+
+#### Full Playable Quiz
+
+##### Plan:
+The main aim of the project was to have a fully playable quiz from the choices provided by the user, sourced from an external API which is being continously updated.
+
+##### Implementation:
+Looking through the API documentation, I created a variable for the base url to access the data which was then completed using the users choices. When these variables had been defined i used the Fetch API function to get the required data, convert to json and then mapped to allow the data to be accessible and functional. After this the answers were put into an array and randomised to ensure if the question was accessed again in a playthrough the answers weren't displayed in the same place.
+
+##### Result:
+The quiz operates as expected, allowing the user to play their chosen quiz in full consistently and without bugs.
+
+#### End Of Game Options
+
+##### Plan:
+At the end of the game the aim was to provide the user with the choice to play the game again with the same choices or to go back to the start to choose a new category/difficulty/question number
+
+##### Implementation:
+When creating the results page i decided the best approach would be to give the user two buttons, one to restart the quiz with the same conditions the other to go back to the start of the game and offer the choices again.
+
+##### Result:
+This worked as expected with little effort.
+
+#### Trivia API
+
+##### Plan:
+Later in development, one of my users said the initial welcome page could use some extra content, i decided on implementing another API to provide a piece of random trivia
+
+##### Implementation:
+As i had already completed work on my quiz, i used the same methods to fetch the API data and pass to the DOM
+
+##### Result:
+This worked as expected, however the API chosen has proven to be unreliable as it's down frequently.
+---
+
 
 
 ### Issues and resolutions
