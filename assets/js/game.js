@@ -31,6 +31,10 @@ function trivia() {
         let triviaText = trivia.text
         dailyTrivia.innerText = triviaText
     })
+    .catch(err => {
+        dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!"
+        console.error(err)
+    })
 }
 
 /**
@@ -196,8 +200,8 @@ function answerFormat() {
 }
 
 /**
- * shows the loader on param & hides
- * @param {shows the loading wheel} load 
+ * Shows/hides the loading wheel
+ * @param {Boolean} loading - True shows loading wheel 
  */
 function loadingWheel(loading){
     if (loading) {
@@ -207,7 +211,6 @@ function loadingWheel(loading){
     }
 }
 
-//unsure on how to place these!
 restartQuiz.addEventListener('click', restartSame = () => {
     showScore.classList.add("hide")
     getQuiz()
