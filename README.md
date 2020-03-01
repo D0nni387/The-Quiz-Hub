@@ -1,8 +1,10 @@
 # The Quiz Hub
 <div style="text-align:center;">
-<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/assets/images/the-quiz-hub-preview.png"></img><br>
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/assets/images/the-quiz-hub-preview.png"></img>
 </div>
+
 ---
+
 ## Contents:
 
 * UX
