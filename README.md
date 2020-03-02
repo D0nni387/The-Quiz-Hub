@@ -308,6 +308,10 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 ## Credits
 
+* Did you know base image sourced from [clker]("http://www.clker.com/")
+* API data source from [opentdb]("https://opentdb.com/")
+* The main logo was designed by me based on Royaltea font sourced from [fluxes]("fluxes.com)
+
 ### Content
 
 
