@@ -230,7 +230,7 @@ Later in development, one of my users said the initial welcome page could use so
 As i had already completed work on my quiz, i used the same methods to fetch the API data and pass to the DOM
 
 ##### Result:
-This worked as expected, however the API chosen has proven to be unreliable as it's down frequently.
+This worked as expected, however the API chosen has proven to be unreliable as it's down frequently. This was then replaced with a random Chuck Norris joke until a suitable alternative could be found
 ---
 
 ### Issues and resolutions
@@ -262,9 +262,18 @@ To fix this i found an error in my bootstrap html causing the logo element to si
 ##### Result
 The logo in initial testing now scales correctly.
 
+##### Bug
+Categories with less than requested questions returned a blank array
+
+##### Fix
+Investigating this issue i found that if the page requested more questions than were available in the API it would return a blank array but still giving the ok to the request meaning it wouldn't be caught with the catch error. To fix this, i added an if statement after the data is returned to check if there is any data within the array, if there isn't then it resets the game and gives the user a coming soon pop up.
+
+##### Result
+I don't feel this is the perfect solution to the issue but ensures the game still works as expected.
+
 ### Known Issues
 
-The only known issue at the moment is the Trivia API is down so the catch error is being produced to the DOM.
+Triva API has been replaced with a random Chuck Norris joke until a suitable alternative can be found. 
 
 ---
 
