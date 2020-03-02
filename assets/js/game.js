@@ -28,15 +28,15 @@ let questions = []
  */
 function trivia() {
     fetch("https://uselessfacts.jsph.pl//random.json?language=en")
-    .then(response => response.json())
-    .then(trivia => {
-        let triviaText = trivia.text
-        dailyTrivia.innerText = triviaText
-    })
-    .catch(() => {
-        dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!"
-        console.error()
-    })
+        .then(response => response.json())
+        .then(trivia => {
+            let triviaText = trivia.text
+            dailyTrivia.innerText = triviaText
+        })
+        .catch(() => {
+            dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!"
+            console.error()
+        })
 }
 
 /**
@@ -67,12 +67,12 @@ function categories() {
                 let categoryOption = document.createElement("option")
                 let categoryName = document.createElement("p")
                 let name = document.createTextNode(category.name)
-            
+
                 categoryName.appendChild(name)
                 categoryOption.appendChild(categoryName)
                 categoryOption.id = category.id
                 categoryOption.classList.add("category")
-                document.getElementById("categoryList").appendChild(categoryOption)   
+                document.getElementById("categoryList").appendChild(categoryOption)
             })
             loadingWheel(false)
             start.classList.remove("hide")
@@ -91,6 +91,7 @@ function getQuiz() {
     getData(true)
     fetch(dataUrl)
         .then(data => data.json())
+        
         .then(loadedQuestions => {
             questions = loadedQuestions.results.map(loadedQuestion => {
                 const formatQuestion = {
@@ -106,10 +107,17 @@ function getQuiz() {
                 })
                 return formatQuestion
             })
-            startGame()
-            loadingWheel(false)
+            if (questions.length > 0) {
+                startGame()
+                loadingWheel(false)
+            } else {
+                errorRestart()
+            }  
         })
-        .catch(() => console.error(err))
+        .catch((err) => {
+            console.error(err)
+            errorRestart()
+        })
 }
 
 /**
@@ -136,7 +144,7 @@ function newQuestion() {
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
         loadingWheel(false)
     } else {
-        questionCount ++
+        questionCount++
         questionCounter.innerText = (`Question:${questionCount}/${quant}`)
         let questionIndex = Math.floor(Math.random() * totalQuestions.length)
         currentQuestion = totalQuestions[questionIndex]
@@ -164,17 +172,17 @@ function answerFormat() {
             let selection = event.target
             let selectedAnswer = selection.dataset["answer"]
 
-          
+
             if (selectedAnswer == currentQuestion.answer) {
-                
+
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
                     title: `You're right!`,
                     showConfirmButton: false,
                     timer: 2500
-                  })
-                  score ++
+                })
+                score++
             } else {
                 Swal.fire({
                     position: 'center',
@@ -182,12 +190,12 @@ function answerFormat() {
                     title: `Sorry the correct answer was number ${currentQuestion.answer}!`,
                     showConfirmButton: false,
                     timer: 2500
-                  })
+                })
             }
-            
+
 
             setTimeout(() => {
-                
+
                 newQuestion()
             }, 2500)
         })
@@ -198,12 +206,32 @@ function answerFormat() {
  * Shows/hides the loading wheel
  * @param {Boolean} loading - True shows loading wheel 
  */
-function loadingWheel(loading){
+function loadingWheel(loading) {
     if (loading) {
         load.classList.remove("hide")
-    } else{
+    } else {
         load.classList.add("hide")
     }
+}
+
+
+/**
+ * If the API returns ok but doesn't return data, restarts quiz
+ */
+function errorRestart() {
+    loadingWheel(true)
+    Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'We are having issues giving you this category, please try another',
+        showConfirmButton: false,
+        timer: 3000
+      })
+    
+    finished.classList.add("hide")
+    showScore.classList.add("hide")
+    start.classList.remove("hide")
+    loadingWheel(false)
 }
 
 restartQuiz.addEventListener('click', () => {
@@ -218,7 +246,7 @@ restartNew.addEventListener('click', () => {
 })
 
 catId.addEventListener('click', () => {
-id = catChoice.options[catChoice.selectedIndex].id
+    id = catChoice.options[catChoice.selectedIndex].id
     diff = diffChoice.options[diffChoice.selectedIndex].id
     quant = quantChoice.options[quantChoice.selectedIndex].id
     start.classList.add("hide")
