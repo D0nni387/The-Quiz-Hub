@@ -15,7 +15,6 @@ const load = document.getElementById("loading")
 let answers = Array.from(document.getElementsByClassName("answer"))
 let restartQuiz = document.getElementById("restartSame")
 let restartNew = document.getElementById("restartNew")
-let finished = document.getElementById("questionArea")
 let baseURL = "https://opentdb.com/"
 let acceptingInput = false
 let currentQuestion = {}
