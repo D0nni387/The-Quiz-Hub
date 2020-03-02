@@ -85,21 +85,27 @@ After discussing various colour combinations with potential users of this site, 
 
 ## Wireframe Mockups:
 
+### Intro Layout
+
+<div style="text-align:center;">
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/assets/images/wireframes/desktop-intro.png"></img><br>
+</div>
+
 ### Desktop
 <div style="text-align:center;">
-<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/wireframes/desktop-quiz-layout.png"></img><br>
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/assets/images/wireframes/desktop-quiz-layout.png"></img><br>
 </div>
 
 ### Tablet
 
 <div style="text-align:center;">
-<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/wireframes/tablet-quiz-layout.png"></img><br>
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/assets/images/wireframes/tablet-quiz-layout.png"></img><br>
 </div>
 
 ### Mobile
 
 <div style="text-align:center;">
-<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/wireframes/mobile-quiz-layout.png"></img>
+<img src="https://raw.githubusercontent.com/D0nni387/The-Quiz-Hub/master/assets/images/wireframes/mobile-quiz-layout.png"></img>
 </div>
 
 ---
@@ -308,16 +314,19 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 ## Credits
 
-* Did you know base image sourced from [clker]("http://www.clker.com/")
-* API data source from [opentdb]("https://opentdb.com/")
-* The main logo was designed by me based on Royaltea font sourced from [fluxes]("fluxes.com)
-
 ### Content
 
+* Did you know base image sourced from [clker](http://www.clker.com/)
+* API data source from [opentdb](https://opentdb.com/)
+* The main logo was designed by me based on Royaltea font sourced from [dafont](https://www.dafont.com/royalteas-color-is-violette.font)
+* Temporary Chuck Norris jokes sourced from [Chuck Norris API](https://api.chucknorris.io/jokes/random)
+* Loader based on W3 schools lesson [w3schools](https://www.w3schools.com/howto/howto_css_loader.asp)
 
 ### Acknowledgements
 
+[Simen Daehlin](https://github.com/Eventyret) - (mentor) for his invaluable input and advice
 
+and my peers for their input in #peer-review-code
 
 ## Disclaimer
 Please note the content and images on this website are for educational purposes only.
