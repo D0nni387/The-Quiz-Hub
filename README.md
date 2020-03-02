@@ -53,7 +53,7 @@ With regards to other sites online, this site ideally needs to be
 
 ### User stories
 
-1. As a user i want the site to be easy to use with a colourful and welcoming inferface.
+1. As a user i want the site to be easy to use with a colourful and welcoming interface.
 2. As a user i want to be able to choose what questions i'm given
 3. As a user i want to be able to select how hard the questions are so my kids could play it
 4. As a user i want to be challenged!
@@ -62,14 +62,14 @@ With regards to other sites online, this site ideally needs to be
 ### Designer goals 
 
 1. Create a simple but engaging quiz game
-2. Minimise continued maintanence with externally sourced quiz questions
+2. Minimise continued maintenance with externally sourced quiz questions
 3. Be engaging enough to hold peoples attention to users coming back to the site after first use.
 
 ### Design Choices
 
 #### Fonts
 
-Due to the minimal approach to the design i decided to use a single font to allow the content to be consistent throughout, deciding on Solway provided through the google font service, i felt this offered the user a simple easy to read font allowing content to be easily read on all devices.
+Due to the minimal approach to the design i decided to use a single font to allow the content to be consistent throughout, deciding on Solway provided through the Google font service, i felt this offered the user a simple easy to read font allowing content to be easily read on all devices.
 
 #### Colours
 
@@ -128,11 +128,11 @@ As people may want a longer game or shorter game the user is presented with the 
 
 ### Sweet Alert
 
-When the user selects an answers the user is presented with a popup to give the outcome of their answer, this was initially handled through CSS classes however Sweet Alert offered a much better experience for the user.
+When the user selects an answers the user is presented with a pop up to give the outcome of their answer, this was initially handled through CSS classes however Sweet Alert offered a much better experience for the user.
 
 ### Full Playable Quiz To Users Choice
 
-With the implimentation of all of the above features, this allows the user to have a customised quiz to their choice.
+With the implementation of all of the above features, this allows the user to have a customised quiz to their choice.
 
 ---
 
@@ -140,13 +140,13 @@ With the implimentation of all of the above features, this allows the user to ha
 
 As this application develops going forward the future goals for the project are
 
-### Global Leaderboards
+### Global Leader boards
 
 With the user being presented with a score upon completion, ideally in the future as my skills increase, adding a leader board could help incetivise users to keep playing and trying to being their score or potentially beat a friend
 
 ### Challenge Mode
 
-In future i would also like to add a challenge mode which would mix genres and test the user in an initial test of a chosen topic then on general knowledge which could also feed into a leaderboard system
+In future i would also like to add a challenge mode which would mix genres and test the user in an initial test of a chosen topic then on general knowledge which could also feed into a leader board system
 
 
 ---
@@ -168,17 +168,17 @@ website preview
 
 ## Testing
 
-As this was my first time developing a full project using JavaScript & external API data i ensure i was extremely thorough with testing to ensure that all functions ran correctly and data was provided to the DOM as expected without any issues. Taking this approach has helped increase my knowledge of JavaScript and best practice greatly.
+As this was my first time developing a full project using JavaScript & external API data i ensured i was extremely thorough with testing to ensure that all functions ran correctly and data was provided to the DOM as expected without any issues. Taking this approach has helped increase my knowledge of JavaScript and best practice greatly.
 
 #### Test Planning
 
-As this project is the most complex thing i have worked on, i wanted to ensure that a methodical approach was taken with constant feature testing throughout development. In it's inital state i created dummy html items to ensure data was being passed and displayed correctly and as expected. In future projects i will look to using more automated testing to aid me in my development. 
+As this project is the most complex thing i have worked on, i wanted to ensure that a methodical approach was taken with constant feature testing throughout development. In it's initial state i created dummy html items to ensure data was being passed and displayed correctly and as expected. In future projects i will look to using more automated testing to aid me in my development. 
 
 #### Testing Stories
 
-* Upon my initial completetion of JS features i was told that my colour pallet was too dull and "boring" which was against my intial plan for the project which led to me implimenting a new colour scheme.
+* Upon my initial completion of JS features i was told that my colour pallet was too dull and "boring" which was against my initial plan for the project which led to me implementing a new colour scheme.
 
-* In my initial coding stages i was using the classic XHR http request which i found to be quite cumbersome to develop with which led me to learn and use the newer fetch API method which i found much easier to use and sped up my progress greatly
+* In my initial coding stages i was using the classic XHR HTTP request which i found to be quite cumbersome to develop with which led me to learn and use the newer fetch API method which i found much easier to use and sped up my progress greatly
 
 * When i was initially developing the confirmation of correct answer, i used css classes to clarify with either a red or green to indicate a correct or incorrect answer, speaking with users this was found to be fit for purpose but dull. At this point i made the decision to move to Sweet Alert to allow for a much more engaging feature for the user.
 
@@ -187,34 +187,38 @@ As this project is the most complex thing i have worked on, i wanted to ensure t
 ## Overall:
 
 ### Responsiveness -
-I decided to develop the site based around bootstrap as this is a utility i'm acustomed with and allowed me to make sure the site was responsive to all devices accessing the site. Using this grid system made laying out items quick and easy.
+I decided to develop the site based around bootstrap as this is a utility i'm accustomed with and allowed me to make sure the site was responsive to all devices accessing the site. Using this grid system made laying out items quick and easy.
 
 ### Design -
-The main aim of my site was to use a simple but vivid colour pallet to help the site feel welcoming and also easy to use, to aid me in this i used bootstrap to help me style elements such as buttons and dropdowns. When chosing a colour pallet i used both [contrast-ration.com](https://contrast-ratio.com/) & [colorsafe.co](http://colorsafe.co/) to ensure my choices are easily to read and follow WCAG Guidelines
+The main aim of my site was to use a simple but vivid colour pallet to help the site feel welcoming and also easy to use, to aid me in this i used bootstrap to help me style elements such as buttons and dropdowns. When choosing a colour pallet i used both [contrast-ration.com](https://contrast-ratio.com/) & [colorsafe.co](http://colorsafe.co/) to ensure my choices are easily to read and follow WCAG Guidelines
 
 ### Features -
 
 #### Self Populating Category List
 
 ##### Plan: 
-During my intial development of this project i found an API i wanted to use which provided a wide variety of categorys to choose from, as this could change if content creators added new categories, i wanted this to be self populating from the API.
+During my initial development of this project i found an API i wanted to use which provided a wide variety of categories to choose from, as this could change if content creators added new categories, i wanted this to be self populating from the API.
 
 ##### Implementation:
-When researching the API documentation, i found the site offered their categories list as a seperate API. When loading the site, i used the fetch API to obtain this list which is then sorted and passed across to the DOM.
+When researching the API documentation, i found the site offered their categories list as a separate API. When loading the site, i used the fetch API to obtain this list which is then sorted and passed across to the DOM.
 
 ##### Result:
 The categories list drop down operates as expected, populating the API data to the DOM allowing the user to select a required category which then influences the Quiz data pulled from the API.
 
+***
+
 #### Full Playable Quiz
 
 ##### Plan:
-The main aim of the project was to have a fully playable quiz from the choices provided by the user, sourced from an external API which is being continously updated.
+The main aim of the project was to have a fully playable quiz from the choices provided by the user, sourced from an external API which is being continuously updated.
 
 ##### Implementation:
 Looking through the API documentation, I created a variable for the base url to access the data which was then completed using the users choices. When these variables had been defined i used the Fetch API function to get the required data, convert to json and then mapped to allow the data to be accessible and functional. After this the answers were put into an array and randomised to ensure if the question was accessed again in a playthrough the answers weren't displayed in the same place.
 
 ##### Result:
 The quiz operates as expected, allowing the user to play their chosen quiz in full consistently and without bugs.
+
+***
 
 #### End Of Game Options
 
@@ -227,6 +231,8 @@ When creating the results page i decided the best approach would be to give the 
 ##### Result:
 This worked as expected with little effort.
 
+***
+
 #### Trivia API
 
 ##### Plan:
@@ -237,6 +243,7 @@ As i had already completed work on my quiz, i used the same methods to fetch the
 
 ##### Result:
 This worked as expected, however the API chosen has proven to be unreliable as it's down frequently. This was then replaced with a random Chuck Norris joke until a suitable alternative could be found
+
 ---
 
 ### Issues and resolutions
@@ -251,13 +258,18 @@ To fix this i decided to make sure that when the user selected an answer it woul
 ##### Result:
 This fixed the issue and allowed all questions to be produced as expected.
 
+***
+
 ##### Bug:
 When the user selected the amount of questions they wanted, it would always give 10 questions.
 
 ##### Fix:
 This was due to the wrong id being reference causing the API to default to 10 questions, changing the variable to the correct id corrected this.
+
 ##### Result:
 When this was changed the correct amount of questions were provided from the API.
+
+***
 
 ##### Bug
 On Apple and Samsung default browsers, the logo was being warped.
@@ -268,6 +280,8 @@ To fix this i found an error in my bootstrap html causing the logo element to si
 ##### Result
 The logo in initial testing now scales correctly.
 
+***
+
 ##### Bug
 Categories with less than requested questions returned a blank array
 
@@ -276,6 +290,8 @@ Investigating this issue i found that if the page requested more questions than 
 
 ##### Result
 I don't feel this is the perfect solution to the issue but ensures the game still works as expected.
+
+***
 
 ### Known Issues
 
