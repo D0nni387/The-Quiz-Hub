@@ -26,10 +26,10 @@ let questions = []
  * Retrieves Trivia data and passes to DOM
  */
 function trivia() {
-    fetch("https://uselessfacts.jsph.pl//random.json?language=en")
+    fetch("https://api.chucknorris.io/jokes/random")
         .then(response => response.json())
         .then(trivia => {
-            let triviaText = trivia.text
+            let triviaText = trivia.value
             dailyTrivia.innerText = triviaText
         })
         .catch(() => {
@@ -221,13 +221,13 @@ function errorRestart() {
     loadingWheel(true)
     Swal.fire({
         position: 'center',
-        icon: 'error',
-        title: 'We are having issues giving you this category, please try another',
+        icon: 'info',
+        title: 'This category is coming soon! keep checking back!',
         showConfirmButton: false,
         timer: 3000
       })
     
-    finished.classList.add("hide")
+    game.classList.add("hide")
     showScore.classList.add("hide")
     start.classList.remove("hide")
     loadingWheel(false)
