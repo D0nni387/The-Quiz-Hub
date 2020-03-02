@@ -1,24 +1,24 @@
-const questionCounter = document.getElementById("questionCount")
-const diffChoice = document.getElementById("difficultySelect")
-const quantChoice = document.getElementById("questionSelect")
-const showScore = document.getElementById("completedArea")
-const catChoice = document.getElementById("categoryList")
-const game = document.getElementById("questionArea")
-const dailyTrivia = document.getElementById("trivia")
-const question = document.getElementById("question")
-const dropItem = document.getElementById("category")
-const finalScore = document.getElementById("score")
-const start = document.getElementById("selectArea")
-const catId = document.getElementById("catSubmit")
-const load = document.getElementById("loading")
+const questionCounter = document.getElementById("questionCount");
+const diffChoice = document.getElementById("difficultySelect");
+const quantChoice = document.getElementById("questionSelect");
+const showScore = document.getElementById("completedArea");
+const catChoice = document.getElementById("categoryList");
+const game = document.getElementById("questionArea");
+const dailyTrivia = document.getElementById("trivia");
+const question = document.getElementById("question");
+const dropItem = document.getElementById("category");
+const finalScore = document.getElementById("score");
+const start = document.getElementById("selectArea");
+const catId = document.getElementById("catSubmit");
+const load = document.getElementById("loading");
 
-let answers = Array.from(document.getElementsByClassName("answer"))
-let restartQuiz = document.getElementById("restartSame")
-let restartNew = document.getElementById("restartNew")
-let baseURL = "https://opentdb.com/"
-let acceptingInput = false
-let currentQuestion = {}
-let questions = []
+let answers = Array.from(document.getElementsByClassName("answer"));
+let restartQuiz = document.getElementById("restartSame");
+let restartNew = document.getElementById("restartNew");
+let baseURL = "https://opentdb.com/";
+let acceptingInput = false;
+let currentQuestion = {};
+let questions = [];
 
 
 
@@ -29,13 +29,13 @@ function trivia() {
     fetch("http://api.icndb.com/jokes/random?limitTo=[nerdy]")
         .then(response => response.json())
         .then(trivia => {
-            let triviaText = trivia.value
-            dailyTrivia.innerText = triviaText.joke
+            let triviaText = trivia.value;
+            dailyTrivia.innerText = triviaText.joke;
         })
         .catch(() => {
-            dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!"
-            console.error()
-        })
+            dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!";
+            console.error();
+        });
 }
 
 /**
@@ -45,9 +45,9 @@ function trivia() {
 
 function getData(gameTrigger) {
     if (gameTrigger) {
-        dataUrl = (`${baseURL}api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`)
+        dataUrl = (`${baseURL}api.php?amount=${quant}&category=${id}&difficulty=${diff}&type=multiple`);
     } else {
-        dataUrl = (`${baseURL}api_category.php`)
+        dataUrl = (`${baseURL}api_category.php`);
     }
 }
 
@@ -55,79 +55,79 @@ function getData(gameTrigger) {
  * Retreieves category list and passes to the DOM
  */
 function categories() {
-    loadingWheel(true)
-    getData(false)
+    loadingWheel(true);
+    getData(false);
     fetch(dataUrl)
         .then(response => response.json())
         .then(category => {
             let categoryList = category.trivia_categories;
             categoryList.forEach(category => {
 
-                let categoryOption = document.createElement("option")
-                let categoryName = document.createElement("p")
-                let name = document.createTextNode(category.name)
+                let categoryOption = document.createElement("option");
+                let categoryName = document.createElement("p");
+                let name = document.createTextNode(category.name);
 
-                categoryName.appendChild(name)
-                categoryOption.appendChild(categoryName)
-                categoryOption.id = category.id
-                categoryOption.classList.add("category")
-                document.getElementById("categoryList").appendChild(categoryOption)
-            })
-            loadingWheel(false)
-            start.classList.remove("hide")
+                categoryName.appendChild(name);
+                categoryOption.appendChild(categoryName);
+                categoryOption.id = category.id;
+                categoryOption.classList.add("category");
+                document.getElementById("categoryList").appendChild(categoryOption);
+            });
+            loadingWheel(false);
+            start.classList.remove("hide");
         })
-        .catch(() => console.error())
+        .catch(() => console.error());
 }
 
-categories()
-trivia()
+categories();
+trivia();
 
 /**
  * Retrieves Quiz Data, sorts the data and passes to the DOM
  */
 function getQuiz() {
-    loadingWheel(true)
-    getData(true)
+    loadingWheel(true);
+    getData(true);
     fetch(dataUrl)
         .then(data => data.json())
-        
+
         .then(loadedQuestions => {
             questions = loadedQuestions.results.map(loadedQuestion => {
                 const formatQuestion = {
                     question: loadedQuestion.question
-                }
-                formatQuestion.answer = Math.floor(Math.random() * 3) + 1
-                const answerChoices = [...loadedQuestion.incorrect_answers]
+                };
+                formatQuestion.answer = Math.floor(Math.random() * 3) + 1;
+                const answerChoices = [...loadedQuestion.incorrect_answers];
                 answerChoices.splice(
                     formatQuestion.answer - 1, 0, loadedQuestion.correct_answer
-                )
+                );
                 answerChoices.forEach((answer, index) => {
-                    formatQuestion["choice" + (index + 1)] = answer
-                })
-                return formatQuestion
-            })
+                    formatQuestion["choice" + (index + 1)] = answer;
+                });
+                return formatQuestion;
+            });
             if (questions.length > 0) {
-                startGame()
-                loadingWheel(false)
+                startGame();
+                loadingWheel(false);
             } else {
-                errorRestart()
-            }  
+                errorRestart();
+            }
         })
         .catch((err) => {
-            console.error(err)
-            errorRestart()
-        })
+            console.error(err);
+            errorRestart();
+        });
 }
 
 /**
  * Starts game
  */
 function startGame() {
-    totalQuestions = [...questions]
-    score = 0
-    questionCount = 0
-    newQuestion()
-    game.classList.remove("hide")
+    totalQuestions = [...questions];
+    score = 0;
+    questionCount = 0;
+    newQuestion();
+    game.classList.remove("hide");
 }
 
 
@@ -135,29 +135,29 @@ function startGame() {
  * checks remaining questions and either ends the game if no questions left or gets next question
  */
 function newQuestion() {
-    loadingWheel(true)
+    loadingWheel(true);
     if (totalQuestions.length == 0) {
-        loadingWheel(true)
-        finished.classList.add("hide")
-        showScore.classList.remove("hide")
-        finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`)
-        loadingWheel(false)
+        loadingWheel(true);
+        finished.classList.add("hide");
+        showScore.classList.remove("hide");
+        finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`);
+        loadingWheel(false);
     } else {
-        questionCount++
-        questionCounter.innerText = (`Question:${questionCount}/${quant}`)
-        let questionIndex = Math.floor(Math.random() * totalQuestions.length)
-        currentQuestion = totalQuestions[questionIndex]
-        question.innerHTML = currentQuestion.question
+        questionCount++;
+        questionCounter.innerText = (`Question:${questionCount}/${quant}`);
+        let questionIndex = Math.floor(Math.random() * totalQuestions.length);
+        currentQuestion = totalQuestions[questionIndex];
+        question.innerHTML = currentQuestion.question;
         answers.forEach(answer => {
-            let number = answer.dataset["answer"]
-            answer.innerHTML = currentQuestion["choice" + number]
-        })
-        totalQuestions.splice(questionIndex, 1)
-        questions.splice(questionIndex, 1)
-        acceptingInput = true
+            let number = answer.dataset["answer"];
+            answer.innerHTML = currentQuestion["choice" + number];
+        });
+        totalQuestions.splice(questionIndex, 1);
+        questions.splice(questionIndex, 1);
+        acceptingInput = true;
     }
-    loadingWheel(false)
-    answerFormat()
+    loadingWheel(false);
+    answerFormat();
 }
 
 /**
@@ -166,10 +166,10 @@ function newQuestion() {
 function answerFormat() {
     answers.forEach(answer => {
         answer.addEventListener('click', () => {
-            if (!acceptingInput) return
-            acceptingInput = false
-            let selection = event.target
-            let selectedAnswer = selection.dataset["answer"]
+            if (!acceptingInput) return;
+            acceptingInput = false;
+            let selection = event.target;
+            let selectedAnswer = selection.dataset["answer"];
 
 
             if (selectedAnswer == currentQuestion.answer) {
@@ -180,8 +180,8 @@ function answerFormat() {
                     title: `You're right!`,
                     showConfirmButton: false,
                     timer: 2500
-                })
-                score++
+                });
+                score++;
             } else {
                 Swal.fire({
                     position: 'center',
@@ -189,16 +189,13 @@ function answerFormat() {
                     title: `Sorry the correct answer was number ${currentQuestion.answer}!`,
                     showConfirmButton: false,
                     timer: 2500
-                })
+                });
             }
-
-
             setTimeout(() => {
-
-                newQuestion()
-            }, 2500)
-        })
-    })
+                newQuestion();
+            }, 2500);
+        });
+    });
 }
 
 /**
@@ -207,9 +204,9 @@ function answerFormat() {
  */
 function loadingWheel(loading) {
     if (loading) {
-        load.classList.remove("hide")
+        load.classList.remove("hide");
     } else {
-        load.classList.add("hide")
+        load.classList.add("hide");
     }
 }
 
@@ -218,36 +215,36 @@ function loadingWheel(loading) {
  * If the API returns ok but doesn't return data, restarts quiz
  */
 function errorRestart() {
-    loadingWheel(true)
+    loadingWheel(true);
     Swal.fire({
         position: 'center',
         icon: 'info',
         title: 'This category is coming soon! keep checking back!',
         showConfirmButton: false,
         timer: 3000
-      })
-    
-    game.classList.add("hide")
-    showScore.classList.add("hide")
-    start.classList.remove("hide")
-    loadingWheel(false)
+    });
+
+    game.classList.add("hide");
+    showScore.classList.add("hide");
+    start.classList.remove("hide");
+    loadingWheel(false);
 }
 
 restartQuiz.addEventListener('click', () => {
-    showScore.classList.add("hide")
-    getQuiz()
-})
+    showScore.classList.add("hide");
+    getQuiz();
+});
 
 
 restartNew.addEventListener('click', () => {
-    showScore.classList.add("hide")
-    start.classList.remove("hide")
-})
+    showScore.classList.add("hide");
+    start.classList.remove("hide");
+});
 
 catId.addEventListener('click', () => {
-    id = catChoice.options[catChoice.selectedIndex].id
-    diff = diffChoice.options[diffChoice.selectedIndex].id
-    quant = quantChoice.options[quantChoice.selectedIndex].id
-    start.classList.add("hide")
-    getQuiz()
-})
+    id = catChoice.options[catChoice.selectedIndex].id;
+    diff = diffChoice.options[diffChoice.selectedIndex].id;
+    quant = quantChoice.options[quantChoice.selectedIndex].id;
+    start.classList.add("hide");
+    getQuiz();
+});
