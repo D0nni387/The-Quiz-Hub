@@ -3,7 +3,7 @@ const diffChoice = document.getElementById("difficultySelect")
 const quantChoice = document.getElementById("questionSelect")
 const showScore = document.getElementById("completedArea")
 const catChoice = document.getElementById("categoryList")
-const started = document.getElementById("questionArea")
+const game = document.getElementById("questionArea")
 const dailyTrivia = document.getElementById("trivia")
 const question = document.getElementById("question")
 const dropItem = document.getElementById("category")
@@ -128,7 +128,7 @@ function startGame() {
     score = 0
     questionCount = 0
     newQuestion()
-    started.classList.remove("hide")
+    game.classList.remove("hide")
 }
 
 
