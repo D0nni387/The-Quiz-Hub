@@ -26,11 +26,11 @@ let questions = []
  * Retrieves Trivia data and passes to DOM
  */
 function trivia() {
-    fetch("https://api.chucknorris.io/jokes/random")
+    fetch("http://api.icndb.com/jokes/random?limitTo=[nerdy]")
         .then(response => response.json())
         .then(trivia => {
             let triviaText = trivia.value
-            dailyTrivia.innerText = triviaText
+            dailyTrivia.innerText = triviaText.joke
         })
         .catch(() => {
             dailyTrivia.innerHTML = "did you know, this data hasn't loaded correctly!"
