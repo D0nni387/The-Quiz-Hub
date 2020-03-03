@@ -138,7 +138,7 @@ function newQuestion() {
     loadingWheel(true);
     if (totalQuestions.length == 0) {
         loadingWheel(true);
-        finished.classList.add("hide");
+        game.classList.add("hide");
         showScore.classList.remove("hide");
         finalScore.innerHTML = (`Congratulations you scored ${score} / ${quant}`);
         loadingWheel(false);
