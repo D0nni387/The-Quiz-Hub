@@ -130,7 +130,6 @@ function startGame() {
     game.classList.remove("hide");
 }
 
-
 /**
  * checks remaining questions and either ends the game if no questions left or gets next question
  */
